@@ -1,2 +1,36 @@
 <%= render "shared/header" %>
+
+
+  <div class="main">
+    <div class="question">Are you a...</div>
+    <ul class="person_type">
+      <li class="cat_person">
+        <%= link_to "#" do %>
+         <div class="person">Cat persn?</div>
+          <%= image_tag "cat_pic.jpg" %>
+        <% end %>
+        </li>
+        <div class="or">or</div>
+        <li class="dog_person">
+          <%= link_to "#" do %>
+            <div class="person">Dog person?</div>
+            <%= image_tag "dog_pic.jpg" %>
+          <% end %>
+      </li>
+    </ul>  
+  </div>  
+  <h2 class="message">
+    It's time to show your CUTIES!
+  </h2>
+
+  <div class="descriptions" id="descriptionlink">
+    <h3 class="description_title">
+      Cutie Piesとは
+    </h3>
+      <div class="concept">"可愛い家族と生涯幸せに"をコンセプトに。</div>
+        <div class="description_main">
+          普段から持っている疑問、どこの動物病院がいいの？こういう場合の対処方は？躾のテクニックやオススメのおもちゃなど。<br>ペットの数だけあるたくさんの悩みや相談を気軽に話合える場を設けることによって新しい発見や知識を持って大切な家族と過ごしてもらいたいという思いで始めました。また、自慢のペットたちの写真をシェアし、ペットを飼うことのできない人たちにとっても癒しの場としてご利用頂けるようにしました！</div>
+    </div>
+</body>
+
 <%= render "shared/footer" %>

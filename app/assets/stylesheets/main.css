@@ -1,0 +1,104 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+  color: rgb(62,62,62);
+}
+
+a {
+  color: rgb(62,62,62);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(62,62,62);
+}
+
+.question {
+  color: rgb(62,62,62);
+  border-bottom: 2px solid rgb(62,62,62);
+  font-size: 50px;
+  display: inline-flex; 
+  justify-content: center; 
+  align-items: center;
+  width: 80%;
+  height: 100px;
+  margin: 40px 10% ;
+}
+
+.person_type {
+  font-size: 40px;
+  color: #fcfcfc;
+  display: flex;
+  justify-content: space-evenly;  
+  list-style: none;
+}
+
+.person_type img {
+  border-radius: 50%;
+  border: 3px solid gray;
+}
+
+.person_type img:hover {
+  transform: scale(0.9);
+  transition-duration: 0.6s;
+  opacity: 0.9;
+}
+
+.cat_person {
+  margin-left: 50px;
+  text-align: center;
+}
+
+.person {
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.or {
+  color: rgb(94, 94, 94);
+  display: flex;
+  align-items: center;
+  font-size: 50px;
+  margin: 0 30px;
+}
+
+.dog_person {
+  margin-right: 50px;
+  text-align: center;
+}
+
+.message {
+  color: rgb(62,62,62);
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+  letter-spacing: 10px;
+}
+
+.descriptions {
+ color: rgb(62,62,62);
+ border: 2px solid rgb(62,62,62);  
+ margin: 30px 50px;
+ height: 250px;
+ padding: 20px;
+ line-height: 2.0;
+ letter-spacing: 5px;
+ overflow: scroll;
+ box-sizing: border-box;
+}
+
+.description_title {
+  font-size: 20px;
+  display: inline-block;
+  border-bottom: 2px solid rgb(62,62,62);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.description_main {
+  line-height: 1.5;
+}
