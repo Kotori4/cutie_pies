@@ -43,7 +43,7 @@ has_many :dog_post_comments
 has_many :vets
 has_many :vet_comments
 has_many :foods
-has_many :fooods_comments
+has_many :foood_comments
 has_many :chats
 has_many :chat_comments
 
