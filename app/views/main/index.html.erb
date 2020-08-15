@@ -1,11 +1,11 @@
 <%= render "shared/header" %>
 
-
+<main>
   <div class="main">
     <div class="question">Are you a...</div>
     <ul class="person_type">
       <li class="cat_person">
-        <%= link_to "#" do %>
+        <%= link_to cat_main_index_path do %>
          <div class="person">Cat persn?</div>
           <%= image_tag "cat_pic.jpg" %>
         <% end %>
@@ -31,6 +31,6 @@
         <div class="description_main">
           普段から持っている疑問、どこの動物病院がいいの？こういう場合の対処方は？躾のテクニックやオススメのおもちゃなど。<br>ペットの数だけあるたくさんの悩みや相談を気軽に話合える場を設けることによって新しい発見や知識を持って大切な家族と過ごしてもらいたいという思いで始めました。また、自慢のペットたちの写真をシェアし、ペットを飼うことのできない人たちにとっても癒しの場としてご利用頂けるようにしました！</div>
     </div>
-</body>
+</main>
 
 <%= render "shared/footer" %>
