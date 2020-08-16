@@ -64,14 +64,8 @@ h3 {
 /* -----------------------share pics ここまで---------------------------------- */
 /* -----------------------share recommendation ここから---------------------------------- */
 
-.recommendation_wrapper {
-  display: flex;
-  justify-content: space-evenly;
-}
-
 .recommendations_main{
-  justify-content: space-evenly;
-  align-items: center;
+
 }
 
 .recommendations_main img {
@@ -81,6 +75,18 @@ h3 {
   border: 3px solid gray;
 }
 
+.recommended_list {
+  display: inline-block;
+}
+
+.recommendation_title{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 23px;
+  margin-top: 8px;
+}
+ 
 .recommendations_main  img:hover {
   transform: scale(0.9);
   transition-duration: 0.6s;
