@@ -10,7 +10,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.integer :favorite_id,        null: false
       t.integer :have_pet_id,        null: false
       t.string  :pet_name,           null: false, default: ""
-
+      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
