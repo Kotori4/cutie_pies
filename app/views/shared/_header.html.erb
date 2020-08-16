@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<div class="header_border">
+  <header class="site_header">
+    <div class="main_header">
+    <h1 class="title">
+    <%= link_to root_path do %>
+    <%= image_tag "cutie_pies.png", class:"logo" %>CUTIE<span class="hart">❤︎</span>PIES
+    <% end %>
+    </h1>
+      <%= image_tag "black_cat.png", class:"black_cat" %>
+    </div>
+    
+    <div class="header_lists">
+        <ul>
+          <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
+          <li class="header_list"><a href="#">ログイン</a></li>
+          <li class="header_list"><a href="#">新規登録</a></li>
+        </ul>
+    </div>
+  </div>
+</header>
+
+<body>
+  <%= yield %>
+</body>
+
+</html>

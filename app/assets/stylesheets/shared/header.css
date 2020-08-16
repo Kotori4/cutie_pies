@@ -1,0 +1,72 @@
+* {
+  font-family: Courier, Times;
+}
+
+a {
+  color: rgb(62,62,62);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(62,62,62);
+}
+
+.site_header {
+  border: 2px solid rgb(62,62,62);
+  height: 200px;
+  width: 100vw;
+   display: flex;
+  justify-content: space-between;
+  background-color:rgb(255, 255, 255);
+}
+
+.title {
+  color: rgb(62, 62, 62);
+  font-size: 70px;
+  margin-bottom: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  top: 15px;
+  left: 15px;
+}
+
+.hart {
+  font-size: 26px;
+  margin: 0px 10px;
+  vertical-align: middle;
+}
+
+.logo {
+  height: 100px;
+  width: 100px;
+}
+
+.main_header {
+  display: flex;
+  align-items: flex-end;
+}
+
+.black_cat {
+  height: 100px;
+  width: 100px;
+}
+
+.header_lists {
+  color: rgb(118, 118, 118);
+  font-size: 15px;
+  margin-right: 20px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header_lists li{
+  margin: 0 15px 20px 15px;
+  display: inline-block;
+}
+
+.header_list :hover :active {
+  transform: scale(0.9);
+  transition-duration: 0.6s;
+  opacity: 0.9;
+}

@@ -1,0 +1,105 @@
+
+body {
+  color: rgb(62, 62, 62);
+}
+
+a {
+  color: rgb(62,62,62);
+  text-decoration: none;
+}
+
+a:visited {
+  color: rgb(62,62,62);
+}
+
+
+h3 {
+  margin: 10px 0 25px 8px;
+}
+
+.cat_main {
+  background-color: rgb(255, 241, 231);
+  padding:0 45px;
+}
+.inner {
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.page-title {
+  width: 75vw;
+  font-size: 30px;
+  margin: 30px 0 10px 0;
+  border-bottom: 2px solid rgb(62, 62, 62);
+}
+
+
+.pic__wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pic {
+  width: calc((100vw - 40px) / 3);
+  margin: 40px;
+}
+
+.posted_pic {
+  width: 45vh;
+  height: 45vh;
+  margin-bottom: 16px;
+}
+
+.card__title {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.card__summary {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+/* -----------------------share pics ここまで---------------------------------- */
+/* -----------------------share recommendation ここから---------------------------------- */
+
+.recommendations_main{
+
+}
+
+.recommendations_main img {
+  width: 45vh;
+  height: 45vh;
+  border-radius: 50%;
+  border: 3px solid gray;
+}
+
+.recommended_list {
+  display: inline-block;
+}
+
+.recommendation_title{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 23px;
+  margin-top: 8px;
+}
+ 
+.recommendations_main  img:hover {
+  transform: scale(0.9);
+  transition-duration: 0.6s;
+  opacity: 0.9;
+}
+
+  .top_page_link {
+    color: rgb(118, 118, 118);
+    font-size: 15px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 ;
+    padding-bottom: 20px;
+  }
+

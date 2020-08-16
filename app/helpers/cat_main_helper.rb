@@ -1,0 +1,2 @@
+module CatMainHelper
+end
