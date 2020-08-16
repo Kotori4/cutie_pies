@@ -1,3 +1,6 @@
+* {
+  font-family: Courier, Times;
+}
 
 a {
   color: rgb(62,62,62);
@@ -19,7 +22,6 @@ a:visited {
 
 .title {
   color: rgb(62, 62, 62);
-  font-family: Courier, Times;
   font-size: 70px;
   margin-bottom: 30px;
   padding: 20px;
@@ -32,6 +34,7 @@ a:visited {
 .hart {
   font-size: 26px;
   margin: 0px 10px;
+  vertical-align: middle;
 }
 
 .logo {

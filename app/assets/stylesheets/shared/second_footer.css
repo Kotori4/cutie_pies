@@ -1,0 +1,21 @@
+.second-footer {
+ 
+}
+
+.second-footer_title {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+}
+
+.second_footer_copyright {
+  font-size: 15px;
+  color: rgb(79, 79, 79);
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
