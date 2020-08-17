@@ -9,7 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string  :encrypted_password, null: false, default: ""
       t.integer :favorite_id,        null: false
       t.integer :have_pet_id,        null: false
-      t.string  :pet_name,           null: false, default: ""
+      t.string  :pet_name
       
       ## Recoverable
       t.string   :reset_password_token
