@@ -6,12 +6,14 @@
       <h2 class="user_registration_title">新規ユーザー登録</h2>
     </div>
 
+    <%= render 'shared/error_messages', model: f.object %>
+
     <div class="user_registration_wrap">
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">ニックネーム</label>
         </div>
-          <%= f.text_field :post_title, class:"input-default", id:"post_title", placeholder:"ニックネーム(11文字まで)", maxlength:"11" %>
+          <%= f.text_field :nickname, class:"input-default", id:"post_title", placeholder:"ニックネーム(11文字まで)", maxlength:"11" %>
       </div>
 
       <div class="form-group">
@@ -48,7 +50,7 @@
         <div class='form-text-wrap'>
           <label class="form-text">ペットの名前</label>
         </div>
-          <%= f.text_field :post_title, class:"input-default", id:"post_title", placeholder:"ペットの名前(11文字まで)", maxlength:"11" %>
+          <%= f.text_field :pet_name, class:"input-default", id:"post_title", placeholder:"ペットの名前(11文字まで)", maxlength:"11" %>
       </div>
       <div class="registration-btn">
         <input class="form-submit" type="submit" value="登録する">
