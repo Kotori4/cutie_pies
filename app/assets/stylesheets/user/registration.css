@@ -3,8 +3,6 @@
 }
 
 .user_registration_main {
-  /* justify-content: center;
-  text-align: center; */
   display: flex;
   align-items: center;
   flex-direction: column;

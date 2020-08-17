@@ -1,1 +1,32 @@
-ユーザログイン画面
+<%= render "shared/second-header" %>
+
+<div class="user_registration_main">
+  <%= form_with class:"registration_main", local: true do |f| %> 
+    <div class="user_registration_header">
+      <h2 class="user_registration_title">ログイン</h2>
+    </div>
+
+    <div class="user_registration_wrap">
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">メールアドレス</label>
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"登録済みメールアドレスの入力", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード</label>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワードの入力" %>
+      </div>
+      
+      <div class="registration-btn">
+        <input class="form-submit" type="submit" value="ログイン">
+      </div>
+      </div>  
+    </div>
+  <% end %> 
+</div>
+
+<%= render "shared/second-footer" %>
