@@ -1,0 +1,2 @@
+class CatPost < ApplicationRecord
+end

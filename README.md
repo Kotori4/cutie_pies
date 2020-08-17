@@ -53,7 +53,7 @@ has_many :chat_comments
 | -------------------- | ---------- | ------------------------------ |
 | user_id              | references | null: false, foreign_key: true |
 | post_title           | string     | null: false                    |
-| text                 | text       | null: false                    |
+| post_text            | text       | null: false                    |
 
 
 ### Association
