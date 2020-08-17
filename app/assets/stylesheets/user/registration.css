@@ -1,0 +1,92 @@
+* {
+  color: rgb(62,62,62);
+}
+
+.user_registration_main {
+  /* justify-content: center;
+  text-align: center; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.user_registration_header{
+  display: flex;
+  justify-content: center;
+}
+
+.user_registration_title {
+  border-bottom: rgb(30, 30, 21) solid 2px;
+  font-size: 25px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.user_registration_wrap {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+.image-file:active  {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  background-color: rgb(213, 210, 210);
+}
+
+.form-group {
+  margin: 0;
+  padding-top: 20px;
+}
+
+.form-text-wrap {
+  text-align: left;
+  width: 100%;
+  height: 20%;
+}
+
+.form-text {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.info-text {
+  font-size: 12px;
+}
+
+.input-default {
+  height: 40px;
+  width: 400px;
+  margin-top: 8px;
+}
+
+.select-box {
+  height: 40px;
+  width: 400px;
+  margin-top: 8px;
+}
+
+
+.form-submit {
+  padding: 0.25em 0.5em;
+  border-bottom: solid 2px rgb(223, 201, 183);
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), 0 2px 2px rgba(0, 0, 0, 0.19);
+  background-color: rgb(252, 237, 219);
+  border: 2px solid rgb(245, 226, 210);
+  outline: none;
+  margin: 30px 0 50px 0; 
+  height: 40px;
+  width: 150px;
+  opacity: 0.9;
+}
+
+.form-submit:active  {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+  background-color: rgb(244, 230, 214);
+}
+
+.registration-btn {
+  text-align: center;
+}
