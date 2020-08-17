@@ -1,15 +1,15 @@
 <%= render "shared/second-header" %>
 
-<%= form_with class:"cat_pic_post", local: true do |f| %> 
+<%= form_with model:@cat_post, url:cat_main_index_path, class:"cat_pic_post", local: true do |f| %> 
   <div class="cat_post_main">
     <div class="cat_post_header">
       <h2 class="cat_posting">投稿情報を入力</h2>
     </div>
-    <%# <div class="cat_post_wrap"> %>
+
       <label class="form-image">
         <div class="image-file">
           <span>画像を選択</span>
-          <input type="file" class="hidden">
+          <%= f.file_field :cat_image, class:"hidden" %>
         </div>
       </label>
 
@@ -24,12 +24,11 @@
         <div class='post-form-wrap'>
           <label class="post-form-text">メッセージ</label>
         </div>
-        <%= f.text_area :post_message, class:"post_message", id:"post_message", placeholder:"タイトル(222文字まで)", maxlength:"222" %>
+        <%= f.text_area :post_text, class:"post_message", id:"post_message", placeholder:"タイトル(222文字まで)", maxlength:"222" %>
       </div>
 
-      <input class="form-submit" type="submit" value="投稿する">
+      <%= f.submit "投稿する" ,class:"form-submit" %>
     </div>
-  <%# </div> %>
 <% end %> 
 
 <%= render "shared/second-footer" %>
