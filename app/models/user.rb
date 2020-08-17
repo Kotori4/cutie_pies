@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
          with_options presence: true do
           validates :nickname
+          validates :password, format: { with: /\A[a-z]+[0-9]+\z/i}
           validates :favorite_id
           validates :have_pet_id
         end
@@ -14,3 +15,5 @@ class User < ApplicationRecord
          belongs_to_active_hash :favorite
          belongs_to_active_hash :have_pet      
 end
+
+
