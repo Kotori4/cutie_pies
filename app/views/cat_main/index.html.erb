@@ -5,17 +5,17 @@
     <div class="inner">
       <h1 class="page-title">SHARE YOUR CUTIE'S PICTURES</h1>
       <h3>にゃんこちゃんの可愛い写真をシェアしよう！</h3>
-      <div class="pic__wrapper">
         <div class="pic">
-          <%= image_tag "test.jpeg", class:"posted_pic" %>
-          <div class="card__body">
-            <h2 class="card__title">猫の写真のタイトル</h2>
-            <p class="card__summary">
-              記事のコメントを入れれる。空白はダメだよー
-            </p>
-          </div>
+            <% @cat_posts.each do |cat| %>
+              <div class="card__body">
+                <%= image_tag cat.cat_image, class:"posted_pic" %>
+                <div class="card__text">
+                  <div class="card__user"><%= cat.user.nickname %></div>
+                  <div class="card__title"><%= cat.post_title %></div> 
+                </div>
+              </div>
+            <% end %>
         </div>
-      </div>
       <%= link_to "投稿する", new_cat_main_path %>
     </div>
 

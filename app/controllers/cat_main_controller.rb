@@ -2,6 +2,7 @@ class CatMainController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
+    @cat_posts = CatPost.all.includes(:user).order("created_at DESC")
   end
 
   def new
