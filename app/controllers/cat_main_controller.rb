@@ -1,8 +1,9 @@
 class CatMainController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+  before_action :all_posted, only: [:index, :posted]
 
   def index
-    @cat_posts = CatPost.all.includes(:user).order("created_at DESC")
+   
   end
 
   def new
@@ -18,11 +19,18 @@ class CatMainController < ApplicationController
     end
   end
 
+  def show
+    @cat_post = CatPost.find(params[:id])
+  end
+
   def posted
-    @cat_posts = CatPost.all.includes(:user).order("created_at DESC")
   end
 
 private
+
+def all_posted
+  @cat_posts = CatPost.all.includes(:user).order("created_at DESC")
+end
 
   def cat_post_params
     params.require(:cat_post).permit(:cat_image, :post_title, :post_text).merge(user_id: current_user.id)

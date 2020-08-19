@@ -7,13 +7,15 @@
       <h3>可愛い写真をシェアしよう！</h3>
         <div class="posted_pic_wrapper">
             <% @cat_posts.each do |cat| %>
-              <div class="posted_card__body">
-                <%= image_tag cat.cat_image, class:"posted_pic" %>
-                <div class="posted_card__text">
-                  <div class="posted_card__user"><%= cat.user.nickname %></div>
-                  <div class="card__title"><%= cat.post_title %></div> 
+              <%= link_to cat_main_path(cat), method: :get do %>
+                <div class="posted_card__body">
+                  <%= image_tag cat.cat_image, class:"posted_pic" %>
+                  <div class="posted_card__text">
+                    <div class="posted_card__user"><%= cat.user.nickname %></div>
+                    <div class="card__title"><%= cat.post_title %></div> 
+                  </div>              
                 </div>
-              </div>
+              <% end %>
             <% end %>
         </div>
     </div>

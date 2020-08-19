@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class="posted_comment_wrapper">
+  <div class="posted_picture_wrapper">
+    <%= image_tag @cat_post.cat_image, class:"posted_picture" %> 
+  </div>
+  <div class="posted_info">  
+    <div class="user_posted">
+      Nickname:<div class="card__user"><%= @cat_post.user.nickname %></div>
+      Title:<div class="card__title"><%= @cat_post.post_title %></div> 
+      Message:<div class="card__title"><%= @cat_post.post_text %></div> 
+    </div>
+    <div class="posted_comments">
+      <div class="posted_comment_title">Comments</div>
+      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+    </div>
+  </div>
+</div>
+        <div class="top_page_link">
+        <%= link_to "前のページに戻る", :back %>
+        </div>
+<%= render "shared/footer" %>
+

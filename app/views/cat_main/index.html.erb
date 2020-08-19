@@ -8,11 +8,13 @@
         <div class="pic">
             <% @cat_posts.first(4).each do |cat| %>
               <div class="card__body">
-                <%= image_tag cat.cat_image, class:"posted_pic" %>
-                <div class="card__text">
-                  <div class="card__user"><%= cat.user.nickname %></div>
-                  <div class="card__title"><%= cat.post_title %></div> 
-                </div>
+                <%= link_to cat_main_path(cat), method: :get do %>
+                  <%= image_tag cat.cat_image, class:"posted_pic" %>
+                  <div class="card__text">
+                    <div class="card__user"><%= cat.user.nickname %></div>
+                    <div class="card__title"><%= cat.post_title %></div> 
+                  </div>
+                <% end %>
               </div>
             <% end %>
         </div>

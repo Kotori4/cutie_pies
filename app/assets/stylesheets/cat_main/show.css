@@ -1,0 +1,45 @@
+
+.posted_comment_wrapper {
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.posted_picture_wrapper {
+}
+
+.posted_picture {
+  margin: 30px 20px 0 40px;
+  height: 60vh;
+  width: 50vw;
+  object-fit: contain; 
+}
+
+.posted_info {
+  width: 30vw;
+  margin: 40px 20px;
+}
+
+.user_posted {
+  padding: 15px;
+  border: 1px solid rgb(62, 62, 62);
+
+}
+.posted_comments {
+  margin-top: 40px;
+  height: 30vw;
+  height: 50%;
+}
+
+.posted_comment_title {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(62, 62, 62);
+}
+
+.posted_comment {
+
+}
+
+
+.comment_user {
+
+}
