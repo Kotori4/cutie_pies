@@ -33,6 +33,6 @@ def all_posted
 end
 
   def cat_post_params
-    params.require(:cat_post).permit(:cat_image, :post_title, :post_text).merge(user_id: current_user.id)
+    params.require(:cat_post).permit(:cat_image, :cat_post_title, :cat_post_text).merge(user_id: current_user.id)
   end
 end

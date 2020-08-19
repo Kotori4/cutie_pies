@@ -17,14 +17,14 @@
         <div class='post-form-wrap'>
           <label class="post-form-text">タイトル</label>
         </div>
-          <%= f.text_field :post_title, class:"post_title", id:"post_title", placeholder:"タイトル(30文字まで)", maxlength:"30" %>
+          <%= f.text_field :cat_post_title, class:"post_title", id:"post_title", placeholder:"タイトル(22文字まで)", maxlength:"22" %>
       </div>
 
       <div class="post-form-group">
         <div class='post-form-wrap'>
           <label class="post-form-text">メッセージ</label>
         </div>
-        <%= f.text_area :post_text, class:"post_message", id:"post_message", placeholder:"タイトル(222文字まで)", maxlength:"222" %>
+        <%= f.text_area :cat_post_text, class:"post_message", id:"post_message", placeholder:"タイトル(222文字まで)", maxlength:"222" %>
       </div>
 
       <%= f.submit "投稿する" ,class:"form-submit" %>

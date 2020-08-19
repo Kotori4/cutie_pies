@@ -5,7 +5,7 @@ class CatPost < ApplicationRecord
 
   with_options presence: true do
     validates :cat_image
-    validates :post_title
-    validates :post_text
+    validates :cat_post_title
+    validates :cat_post_text
   end
 end
