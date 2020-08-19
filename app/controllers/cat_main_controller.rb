@@ -18,6 +18,10 @@ class CatMainController < ApplicationController
     end
   end
 
+  def posted
+    @cat_posts = CatPost.all.includes(:user).order("created_at DESC")
+  end
+
 private
 
   def cat_post_params

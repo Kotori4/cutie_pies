@@ -4,7 +4,7 @@
   <main class="cat_main">
     <div class="inner">
       <h1 class="page-title">SHARE YOUR CUTIE'S PICTURES</h1>
-      <h3>にゃんこちゃんの可愛い写真をシェアしよう！</h3>
+      <h3>可愛い写真をシェアしよう！</h3>
         <div class="pic">
             <% @cat_posts.first(4).each do |cat| %>
               <div class="card__body">
@@ -17,7 +17,7 @@
             <% end %>
         </div>
       <div class="btn_wrapper">  
-      <%= link_to new_cat_main_path do %>
+      <%= link_to posted_cat_main_index_path do %>
         <span class="see_more">もっと見る<%= image_tag "next_page.png", class: "next_page" %></span>
       <% end %>
       <%= link_to new_cat_main_path do %>

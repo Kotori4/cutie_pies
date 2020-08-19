@@ -4,5 +4,10 @@ Rails.application.routes.draw do
   get 'main/index'
   root "main#index"
   
-  resources :cat_main
+  resources :cat_main do
+    collection do 
+      get 'posted'
+    end
+  end
+
 end

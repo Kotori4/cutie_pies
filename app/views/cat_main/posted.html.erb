@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+<body>
+  <main class="posted_cat_main">
+    <div class="posted_inner">
+      <h1 class="posted_page-title">SHARE YOUR CUTIE'S PICTURES</h1>
+      <h3>可愛い写真をシェアしよう！</h3>
+        <div class="posted_pic_wrapper">
+            <% @cat_posts.each do |cat| %>
+              <div class="posted_card__body">
+                <%= image_tag cat.cat_image, class:"posted_pic" %>
+                <div class="posted_card__text">
+                  <div class="posted_card__user"><%= cat.user.nickname %></div>
+                  <div class="card__title"><%= cat.post_title %></div> 
+                </div>
+              </div>
+            <% end %>
+        </div>
+    </div>
+
+        <div class="top_page_link">
+        <%= link_to "トップページへ戻る", "/"%>
+        </div>
+  </main>
+</body>
+
+<%= render "shared/footer" %>
