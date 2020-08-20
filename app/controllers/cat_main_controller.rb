@@ -21,6 +21,8 @@ class CatMainController < ApplicationController
 
   def show
     @cat_post = CatPost.find(params[:id])
+    @cat_comment = CatPostComment.new
+    @comment = @cat_post.cat_post_comments.includes(:user)
   end
 
   def posted

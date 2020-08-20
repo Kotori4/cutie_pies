@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_080600) do
+ActiveRecord::Schema.define(version: 2020_08_19_092156) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2020_08_19_080600) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "cat_post_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cat_post_id"
+    t.text "cat_post_comment", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_post_id"], name: "index_cat_post_comments_on_cat_post_id"
+    t.index ["user_id"], name: "index_cat_post_comments_on_user_id"
+  end
+
   create_table "cat_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "cat_post_title", null: false
@@ -43,11 +53,13 @@ ActiveRecord::Schema.define(version: 2020_08_19_080600) do
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "cat_post_id"
-    t.text "cat_post_comment"
+    t.bigint "user_id"
+    t.bigint "cat_post_id"
+    t.text "cat_post_comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["cat_post_id"], name: "index_comments_on_cat_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,5 +79,9 @@ ActiveRecord::Schema.define(version: 2020_08_19_080600) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "cat_post_comments", "cat_posts"
+  add_foreign_key "cat_post_comments", "users"
   add_foreign_key "cat_posts", "users"
+  add_foreign_key "comments", "cat_posts"
+  add_foreign_key "comments", "users"
 end

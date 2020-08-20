@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
          has_many :cat_posts
+         has_many :cat_post_comments
 
          with_options presence: true do
           validates :nickname

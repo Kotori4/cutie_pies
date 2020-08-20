@@ -22,6 +22,13 @@
   </div>
 </div>
 
+  <div class="container">
+      <%= form_with(model: [@cat_post_comment,@cat_post], url:cat_main_cat_post_comments_path(@cat_post), class:"post_comment", local: true) do |form| %>
+        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+       <div class="comment_btn"><%= form.submit "コメントする" %></div>
+      <% end %>
+  </div>
+
   <div class="top_page_link">
     <%= link_to "前のページに戻る", :back %>
   </div>
