@@ -12,20 +12,18 @@
     </div>
     <div class="posted_comments">
       <div class="posted_comment_title">Comments</div>
-      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
-      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
-      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
-      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
-      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
-      <p class="comment_user">ユーザ名  <span class="posted_comment">ここにコメント入れたいなー</span></p>
+      <% @cat_post_comments.each do |comment| %>
+        <p class="comment_user"><%= comment.user.nickname %><span class="posted_comment"><%= comment.cat_post_comment %></span></p>
+
+      <% end %>
     </div>
   </div>
 </div>
 
   <div class="container">
-      <%= form_with(model: [@cat_post_comment,@cat_post], url:cat_post_cat_post_comments_path(@cat_post), method: :post, local: true) do |form| %>
-        <%= form.text_area :cat_post_comment, placeholder: "コメントする" %>
-       <div class="comment_btn"><%= form.submit "コメントする" %></div>
+      <%= form_with(model: [@cat_post_comment,@cat_post], url:cat_post_cat_post_comments_path(@cat_post), method: :post, local: true) do |f| %>
+        <%= f.text_area :cat_post_comment, placeholder: "コメントを入力", class:"comment_field" %>
+      <div><%= f.submit "コメントする", class:"comment_btn" %></div>
       <% end %>
   </div>
 
