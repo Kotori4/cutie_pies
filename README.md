@@ -52,8 +52,8 @@ has_many :chat_comments
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 | user_id              | references | null: false, foreign_key: true |
-| post_title           | string     | null: false                    |
-| text                 | text       | null: false                    |
+| cat_post_title       | string     | null: false                    |
+| cat_post_text        | text       | null: false                    |
 
 
 ### Association
@@ -66,7 +66,7 @@ has_many    :cat_post_comments
 | ---------------- | ---------- | ---------------------------------- |
 | user_id          | references | null: false, foreign_key: true     |
 | cat_post_id      | references | null: false, foreign_key: true     |
-| comment          | text       | default: "", null: false           |
+| cat_post_comment | text       | default: "", null: false           |
 
 belongs_to :user
 belongs_to :cat_post
@@ -76,8 +76,8 @@ belongs_to :cat_post
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
 | user_id              | references | null: false, foreign_key: true |
-| post_title           | string     | null: false                    |
-| text                 | text       | null: false                    |
+| dog_post_title       | string     | null: false                    |
+| dog_post_text        | text       | null: false                    |
 
 
 ### Association
@@ -90,8 +90,7 @@ has_many   :dog_post_comments
 | ---------------- | ---------- | ---------------------------------- |
 | user_id          | references | null: false, foreign_key: true     |
 | dog_post_id      | references | null: false, foreign_key: true     |
-| post             | references | null: false, foreign_key: true     |
-| comment          | text       | default: "", null: false           |
+| dog_post_comment | text       | default: "", null: false           |
 
 belongs_to :user
 belongs_to :dog_post

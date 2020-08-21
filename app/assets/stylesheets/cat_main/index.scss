@@ -1,8 +1,3 @@
-
-body {
-  color: rgb(62, 62, 62);
-}
-
 a {
   color: rgb(62,62,62);
   text-decoration: none;
@@ -33,33 +28,73 @@ h3 {
   border-bottom: 2px solid rgb(62, 62, 62);
 }
 
-
-.pic__wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.card__body {
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .pic {
+  display: flex;
+  justify-content: space-between;
   width: calc((100vw - 40px) / 3);
-  margin: 40px;
+  margin: 40px 40px 40px 0;
 }
 
 .posted_pic {
-  width: 45vh;
-  height: 45vh;
-  margin-bottom: 16px;
+  margin-right: 20px ;
+  width: 32vh;
+  height: 38vh;
+  margin-bottom: 8px;
+}
+
+.card__text {
+
+}
+
+.card__user {
+  font-weight: bold;
 }
 
 .card__title {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
 }
+
 .card__summary {
-  font-size: 18px;
+  background-color: steelblue;
+  font-size: 15px;
   margin-bottom: 20px;
 }
 
+.btn_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.see_more {
+  font-size: 20px;
+  margin-right: 25px;
+}
+
+.post_btn{
+  font-size: 20px;
+  margin-right: 25px;
+}
+
+.next_page {
+  width: 38px;
+  height: 32px;
+  margin-bottom: 5px;
+  vertical-align: middle;
+}
+
+.see_more:hover{
+  border-bottom: 1px solid rgb(62,62,62);
+}
+.post_btn:hover{
+  border-bottom: 1px solid rgb(62,62,62);
+}
 
 /* -----------------------share pics ここまで---------------------------------- */
 /* -----------------------share recommendation ここから---------------------------------- */
@@ -93,13 +128,4 @@ h3 {
   opacity: 0.9;
 }
 
-  .top_page_link {
-    color: rgb(118, 118, 118);
-    font-size: 15px;
-    margin-right: 20px;
-    display: flex;
-    justify-content: center;
-    margin: 20px 0 ;
-    padding-bottom: 20px;
-  }
 

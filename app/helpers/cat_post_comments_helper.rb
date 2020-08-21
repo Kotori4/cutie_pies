@@ -1,0 +1,2 @@
+module CatPostCommentsHelper
+end

@@ -1,0 +1,14 @@
+  .top_page_link {
+    color: rgb(118, 118, 118);
+    font-size: 15px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 ;
+    padding-bottom: 20px;
+  }
+
+
+  .top_page_link :hover{
+    border-bottom: 1px solid rgb(62, 62, 62);
+  }

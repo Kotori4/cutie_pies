@@ -1,0 +1,39 @@
+<%= render "shared/header" %>
+
+<div class="posted_comment_wrapper">
+  <div class="posted_picture_wrapper">
+    <%= image_tag @cat_post.cat_image, class:"posted_picture" %> 
+  </div>
+  <div class="posted_info">  
+    <div class="user_posted">
+      Nickname:<div class="card__user"><%= @cat_post.user.nickname %></div>
+      Title:<div class="card__title"><%= @cat_post.cat_post_title %></div> 
+      Message:<div class="card__title"><%= @cat_post.cat_post_text %></div> 
+    </div>
+    
+    <div class="posted_comments">
+      <div class="posted_comment_title">Comments</div>
+      <div class="comment_wrapper">
+      <% @cat_post_comments.each do |comment| %>
+        <ul comment_info>
+          <li class="comment_user"><%= comment.user.nickname %></li>
+          <li class="posted_comment"><%= comment.cat_post_comment %></li>
+        </ul>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+      <%= form_with(model: [@cat_post_comment,@cat_post], url:cat_post_cat_post_comments_path(@cat_post), method: :post, local: true) do |f| %>
+        <%= f.text_area :cat_post_comment, placeholder: "コメントを入力", class:"comment_field" %>
+      <div><%= f.submit "コメントする", class:"comment_btn" %></div>
+      <% end %>
+  </div>
+
+  <div class="top_page_link">
+    <%= link_to "前のページに戻る", :back %>
+  </div>
+<%= render "shared/footer" %>
+

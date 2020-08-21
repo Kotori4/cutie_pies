@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-  get 'main/index'
+
   root "main#index"
-  
-  resources :cat_main, only:[:index, :new]
+
+  resources :cat_post do
+    resources :cat_post_comments, only: :create
+    collection do 
+      get 'posted'
+    end
+  end
 end
+
