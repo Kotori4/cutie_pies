@@ -10,12 +10,17 @@
       Title:<div class="card__title"><%= @cat_post.cat_post_title %></div> 
       Message:<div class="card__title"><%= @cat_post.cat_post_text %></div> 
     </div>
+    
     <div class="posted_comments">
       <div class="posted_comment_title">Comments</div>
+      <div class="comment_wrapper">
       <% @cat_post_comments.each do |comment| %>
-        <p class="comment_user"><%= comment.user.nickname %><span class="posted_comment"><%= comment.cat_post_comment %></span></p>
-
+        <ul comment_info>
+          <li class="comment_user"><%= comment.user.nickname %></li>
+          <li class="posted_comment"><%= comment.cat_post_comment %></li>
+        </ul>
       <% end %>
+      </div>
     </div>
   </div>
 </div>

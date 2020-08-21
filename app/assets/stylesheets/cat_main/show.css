@@ -16,7 +16,7 @@
 
 .posted_info {
   width: 30vw;
-  margin: 40px 20px;
+  margin: 50px 30px 0 40px;
 }
 
 .user_posted {
@@ -35,27 +35,42 @@
   border-bottom: 1px solid rgb(62, 62, 62);
 }
 
-.posted_comment {
 
+.comment_wrapper {
+  width: 30vw;
+  height: 30vh;
+  overflow: scroll;
 }
 
+.comment_info {
+  margin-left: 1.4em;
+	text-indent: -1.4em;
+  justify-content: space-evenly;
+  align-content: space-around;
+}
 
 .comment_user {
+  display: inline-block;
+  font-weight: bold;
+}
 
+.posted_comment {
+  display: inline-block;
+}
+
+.comment_field {
+  height: 12vh;
+  width: 40vw;
+}
+
+.cat_post_comment {
+  
 }
 
 .container {
   text-align: center;
 }
 
-.comment_field {
-  height: 70px;
-  width: 480px;
-}
-
-.cat_post_comment {
-  
-}
 
 .comment_btn {
   color: rgb(106, 97, 89);
