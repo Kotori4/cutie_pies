@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "main#index"
 
+  resources :foods 
   resources :cat_post do
     resources :cat_post_comments, only: :create
     collection do 

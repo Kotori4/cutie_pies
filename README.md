@@ -100,8 +100,8 @@ belongs_to :dog_post
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
-| title            | string     | default: "", null: false       |
-| comment          | text       | default: "", null: false       |
+| vet_title        | string     | default: "", null: false       |
+| vet_text         | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
@@ -113,7 +113,7 @@ has_many   :vet_comments
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
 | vet_id           | references | null: false, foreign_key: true |
-| comment          | text       | default: "", null: false       |
+| vet_comment      | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
@@ -124,8 +124,8 @@ belongs_to :vet
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
-| title            | text       | default: "", null: false       |
-| comment          | text       | default: "", null: false       |
+| food_title       | string     | default: "", null: false       |
+| food_text        | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
@@ -137,7 +137,7 @@ has_many   :food_comments
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
 | food_id          | references | null: false, foreign_key: true |
-| comment          | text       | default: "", null: false       |
+| food_comment     | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
@@ -150,7 +150,7 @@ belongs_to :food
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
 | room_name        | string     | null: false                    |
-| comment          | text       | default: "", null: false       |
+| chat_text        | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
@@ -162,7 +162,7 @@ has_many :chat_comments
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
 | chat_id          | references | null: false, foreign_key: true |
-| comment          | text       | default: "", null: false       |
+| chat_comment     | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
