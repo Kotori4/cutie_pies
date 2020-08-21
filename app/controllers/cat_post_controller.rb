@@ -1,4 +1,4 @@
-class CatMainController < ApplicationController
+class CatPostController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :all_posted, only: [:index, :posted]
 
@@ -21,8 +21,8 @@ class CatMainController < ApplicationController
 
   def show
     @cat_post = CatPost.find(params[:id])
-    @cat_comment = CatPostComment.new
-    @comment = @cat_post.cat_post_comments.includes(:user)
+    @cat_post_comment = CatPostComment.new
+    @cat_post_comments = @cat_post.cat_post_comments.includes(:user).order("created_at DESC")
   end
 
   def posted

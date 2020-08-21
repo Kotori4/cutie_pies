@@ -8,7 +8,7 @@
         <div class="pic">
             <% @cat_posts.first(4).each do |cat| %>
               <div class="card__body">
-                <%= link_to cat_main_path(cat), method: :get do %>
+                <%= link_to cat_post_path(cat), method: :get do %>
                   <%= image_tag cat.cat_image, class:"posted_pic" %>
                   <div class="card__text">
                     <div class="card__user"><%= cat.user.nickname %></div>
@@ -19,10 +19,10 @@
             <% end %>
         </div>
       <div class="btn_wrapper">  
-      <%= link_to posted_cat_main_index_path do %>
+      <%= link_to posted_cat_post_index_path do %>
         <span class="see_more">もっと見る<%= image_tag "next_page.png", class: "next_page" %></span>
       <% end %>
-      <%= link_to new_cat_main_path do %>
+      <%= link_to new_cat_post_path do %>
         <span class="post_btn">投稿する<%= image_tag "next_page.png", class: "next_page" %></span>
       <% end %>
       

@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         has_many :cat_posts
-         has_many :cat_post_comments
+         has_many :cat_posts, dependent: :destroy
+         has_many :cat_post_comments, dependent: :destroy
 
          with_options presence: true do
           validates :nickname

@@ -7,7 +7,7 @@
       <h3>可愛い写真をシェアしよう！</h3>
         <div class="posted_pic_wrapper">
             <% @cat_posts.each do |cat| %>
-              <%= link_to cat_main_path(cat), method: :get do %>
+              <%= link_to cat_post_path(cat), method: :get do %>
                 <div class="posted_card__body">
                   <%= image_tag cat.cat_image, class:"posted_pic" %>
                   <div class="posted_card__text">
@@ -20,7 +20,7 @@
         </div>
     </div>
         <div class="posting_pic_wrapper">
-          <%= link_to "写真を投稿する", new_cat_main_path, class:"posting_pic" %>
+          <%= link_to "写真を投稿する", new_cat_post_path, class:"posting_pic" %>
         </div>
 
     <div class="top_page_link">

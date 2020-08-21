@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root "main#index"
 
-  resources :cat_main do
+  resources :cat_post do
     resources :cat_post_comments, only: :create
     collection do 
       get 'posted'
