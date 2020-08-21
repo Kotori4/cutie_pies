@@ -13,7 +13,7 @@ class CatPostController < ApplicationController
   def create
     @cat_post = CatPost.new(cat_post_params)
     if @cat_post.save
-      redirect_to cat_main_index_path   
+      redirect_to cat_post_index_path   
     else
       render 'new'
     end
