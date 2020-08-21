@@ -1,0 +1,28 @@
+<%= render "shared/second-header" %>
+
+<%= form_with model:@food, url:foods_path, class:"cat_pic_post", local: true do |f| %> 
+  <div class="cat_post_main">
+    <div class="cat_post_header">
+      <h2 class="cat_posting">フードおすすめ情報を入力</h2>
+    </div>
+
+
+      <div class="post-form-group">
+        <div class='post-form-wrap'>
+          <label class="post-form-text">タイトル</label>
+        </div>
+          <%= f.text_field :food_title, class:"post_title", id:"post_title", placeholder:"タイトル(22文字まで)", maxlength:"22" %>
+      </div>
+
+      <div class="post-form-group">
+        <div class='post-form-wrap'>
+          <label class="post-form-text">メッセージ</label>
+        </div>
+        <%= f.text_area :food_text, class:"post_message", id:"post_message", placeholder:"タイトル(222文字まで)", maxlength:"222" %>
+      </div>
+
+      <%= f.submit "投稿する" ,class:"form-submit" %>
+    </div>
+<% end %> 
+
+<%= render "shared/second-footer" %>
