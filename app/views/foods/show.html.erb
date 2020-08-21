@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<body class="food_body">
+  <h1 class="share_food_title">SHARE YOUR PET FOOD RECOMMENDATION </h1>
+
+
+  <div class="posted_food_info">  
+    <div class="posted_foods">
+      <div class="food_posted_user">Nickname:  <%= @food.user.nickname %></div>
+      <div class="posted_food_title">Title:  <%= @food.food_title %></div> 
+      <div class="posted_food_text">Message:  <%= @food.food_text %></div> 
+    </div>
+
+
+    <div class="top_page_link">
+      <%= link_to "前のページに戻る", :back %>
+    </div>
+</body>
+
+
+<%= render "shared/footer" %>

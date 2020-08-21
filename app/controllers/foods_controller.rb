@@ -1,6 +1,7 @@
 class FoodsController < ApplicationController
 
   def index
+    @foods = Food.all.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -14,6 +15,10 @@ class FoodsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @food = Food.find(params[:id])
   end
 
   private

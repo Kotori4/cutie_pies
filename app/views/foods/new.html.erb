@@ -6,6 +6,12 @@
       <h2 class="cat_posting">フードおすすめ情報を入力</h2>
     </div>
 
+      <label class="form-image">
+        <div class="image-file">
+          <span>画像を選択</span>
+          <%= f.file_field :cat_image, class:"hidden" %>
+        </div>
+      </label>
 
       <div class="post-form-group">
         <div class='post-form-wrap'>
@@ -18,7 +24,7 @@
         <div class='post-form-wrap'>
           <label class="post-form-text">メッセージ</label>
         </div>
-        <%= f.text_area :food_text, class:"post_message", id:"post_message", placeholder:"タイトル(222文字まで)", maxlength:"222" %>
+        <%= f.text_area :food_text, class:"post_message", id:"post_message", placeholder:"タイトル(1111文字まで)", maxlength:"1111" %>
       </div>
 
       <%= f.submit "投稿する" ,class:"form-submit" %>
