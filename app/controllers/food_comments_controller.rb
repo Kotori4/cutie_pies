@@ -1,10 +1,9 @@
 class FoodCommentsController < ApplicationController
 
   def create
-    
-    @food_comment = current_user.food_comment.build(food_comment_params)
+    @food_comment = current_user.food_comments.build(food_comment_params)
     if @food_comment.save
-      redirect_to "/food/#{@food_comment.food.id}"
+      redirect_to food_path(@food_comment.food_id)
     end
   end
 
