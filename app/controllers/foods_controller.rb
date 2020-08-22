@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
 
   def index
-    @foods = Food.all.includes(:user).order("created_at DESC")
+    @foods = Food.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -11,7 +11,7 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.save
-      redirect_to foods_path   
+      redirect_to foods_path
     else
       render 'new'
     end
