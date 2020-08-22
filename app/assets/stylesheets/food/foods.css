@@ -44,6 +44,20 @@
   border-bottom: 1px solid rgb(62, 62, 62);
 }
 
+.pagination {
+  display: flex;
+  justify-content: center; 
+  margin: 40px 0 50px 0;
+}
+
+.pagination>.active>a {     
+  background: #93c9ff;
+}
+
+a, a:visited, a:focus, a:hover {
+  text-decoration: none;
+}
+
 /* 詳細ページCSS */
 
 .posted_food_info {
