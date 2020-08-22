@@ -1,5 +1,6 @@
 * {
   color: rgb(62,62,62);
+
 }
 
 .cat_post_main {
@@ -23,6 +24,8 @@
 }
 
 .image-file {
+  font-size: 18px;
+  font-weight: lighter;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -79,6 +82,7 @@
 }
 
 .form-submit {
+  font-size: 18px;
   display: inline-block;
   padding: 0.25em 0.5em;
   border-bottom: solid 2px rgb(223, 201, 183);
@@ -97,3 +101,4 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
   background-color: rgb(244, 230, 214);
 }
+

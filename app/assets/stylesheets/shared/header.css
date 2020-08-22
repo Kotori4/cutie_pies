@@ -1,5 +1,6 @@
 * {
   font-family: Courier, Times;
+
 }
 
 a {
@@ -60,7 +61,12 @@ a:visited {
   align-items: flex-end;
 }
 
+.header_lists a{
+  color: rgb(62,62,62);
+}
+
 .header_lists li{
+  color: rgb(62,62,62);
   margin: 0 15px 20px 15px;
   display: inline-block;
 }
