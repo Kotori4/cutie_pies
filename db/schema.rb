@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_094954) do
+ActiveRecord::Schema.define(version: 2020_08_22_022937) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -52,6 +52,16 @@ ActiveRecord::Schema.define(version: 2020_08_21_094954) do
     t.index ["user_id"], name: "index_cat_posts_on_user_id"
   end
 
+  create_table "food_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "food_id"
+    t.text "food_comment", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["food_id"], name: "index_food_comments_on_food_id"
+    t.index ["user_id"], name: "index_food_comments_on_user_id"
+  end
+
   create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "food_title", null: false
@@ -81,5 +91,7 @@ ActiveRecord::Schema.define(version: 2020_08_21_094954) do
   add_foreign_key "cat_post_comments", "cat_posts"
   add_foreign_key "cat_post_comments", "users"
   add_foreign_key "cat_posts", "users"
+  add_foreign_key "food_comments", "foods"
+  add_foreign_key "food_comments", "users"
   add_foreign_key "foods", "users"
 end

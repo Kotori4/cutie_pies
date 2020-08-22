@@ -131,7 +131,7 @@ belongs_to :vet
 belongs_to :user
 has_many   :food_comments
 
-## foods_comments テーブル
+## food_comments テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
