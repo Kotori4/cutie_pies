@@ -19,8 +19,8 @@ class FoodsController < ApplicationController
 
   def show
     @food = Food.find(params[:id])
-    @food_comments = FoodComment.all
-    # @food_comments = @food.food_comment.includes(:user).order("created_at DESC")
+    @food_comment = FoodComment.new
+    @food_comments = @food.food_comments.includes(:user).order("created_at DESC")
   end
 
   private

@@ -3,19 +3,19 @@
 <body class="food_body">
   <h1 class="share_food_title">SHARE YOUR PET FOOD RECOMMENDATION </h1>
   <div class="share_food_btn_wrapper">
-   <%= link_to "◎ おすすめを投稿する ◎", new_food_path, class:"share_food_btn" %>
+    <%= link_to "◎ おすすめを投稿する ◎", new_food_path, class:"share_food_btn" %>
   </div>
 
 
     <% @foods.each do |food| %>
       <ul>
         <%= link_to food_path(food), method: :get do %>
-              <li class="food_recommend_title">Title:  <%= food.food_title %></li>
-              <li class="food_recommend_text"><%= food.food_text %></li>
+          <li class="food_recommend_title">Title:  <%= food.food_title %></li>
+          <li class="food_recommend_text"><%= food.food_text %></li>
         <% end %>
       </ul>
     <% end %>
-<%= paginate @foods %>
+  <%= paginate @foods %>
 
     <div class="top_page_link">
       <%= link_to "トップページに戻る", "/" %>
