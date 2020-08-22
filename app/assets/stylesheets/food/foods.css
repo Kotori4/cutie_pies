@@ -43,3 +43,27 @@
 .share_food_btn:hover{
   border-bottom: 1px solid rgb(62, 62, 62);
 }
+
+/* 詳細ページCSS */
+
+.posted_food_info {
+  display: flex;
+}
+
+.posted_foods {
+  margin: 30px 80px 20px 0;
+}
+.food_posted_user {
+  margin-bottom: 5px;
+}
+
+.posted_food_title {
+  margin-bottom: 8px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid rgb(92, 92, 92);
+}
+
+.posted_food_text {
+
+}
+

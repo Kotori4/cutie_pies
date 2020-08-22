@@ -23,6 +23,6 @@ class FoodsController < ApplicationController
 
   private
   def food_params
-    params.require(:food).permit(:food_title, :food_text).merge(user_id: current_user.id)
+    params.require(:food).permit(:food_image, :food_title, :food_text).merge(user_id: current_user.id)
   end
 end
