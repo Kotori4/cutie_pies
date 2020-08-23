@@ -12,3 +12,4 @@ class FoodCommentsController < ApplicationController
     params.require(:food).permit(:food_comment).merge(food_id: params[:food_id])
   end
 end
+

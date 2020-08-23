@@ -12,10 +12,15 @@
 }
 
 .posted_food_title {
-  margin-bottom: 8px;
   padding-bottom: 2px;
-  border-bottom: 1px solid rgb(92, 92, 92);
   font-size: 15px;
+}
+
+.posted_food_time {
+  margin-bottom: 8px;
+  padding: 2px 10px 0 0;
+  border-bottom: 1px solid rgb(92, 92, 92);
+  font-size: 13px;
 }
 
 .posted_food_text {
@@ -34,15 +39,24 @@
 
 .posted_food_comment {
   display: inline-block;
+  margin-bottom: 3px;
 }
 
 .food_comment_user {
   display: inline-block;
   font-size: 15px;
   font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.food__time {
+  font-size: 10px;
 }
 
 .no_food_comment {
+  display: flex;
+  justify-content: center;
+  align-items:center;
   margin: 40px 0;
   font-size: 18px;
 }
