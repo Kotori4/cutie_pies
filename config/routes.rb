@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "main#index"
-  resources :goods
+  resources :items
 
   resources :foods do 
     resources :food_comments, only: :create
