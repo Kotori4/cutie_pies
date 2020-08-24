@@ -14,7 +14,7 @@
   border-bottom: rgb(30, 30, 21) solid 2px;
   font-size: 25px;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .user_registration_wrap {
@@ -32,7 +32,7 @@
 
 .form-group {
   margin: 0;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .form-text-wrap {
@@ -53,13 +53,13 @@
 .input-default {
   height: 40px;
   width: 400px;
-  margin-top: 8px;
 }
 
 .select-box {
   height: 40px;
   width: 400px;
   margin-top: 8px;
+  font-size: 15px;
 }
 
 
@@ -71,7 +71,7 @@
   background-color: rgb(252, 237, 219);
   border: 2px solid rgb(245, 226, 210);
   outline: none;
-  margin: 30px 0 20px 0; 
+  margin: 40px 0 20px 0; 
   height: 40px;
   width: 180px;
   opacity: 0.9;
@@ -96,4 +96,8 @@
 .sign_up_link {
   font-size: 12px;
   border-bottom: 1px solid slategray;
+}
+
+input, textarea {
+  font-size: 15px;
 }

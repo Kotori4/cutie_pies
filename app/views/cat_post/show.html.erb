@@ -6,20 +6,25 @@
   </div>
   <div class="posted_info">  
     <div class="user_posted">
-      Nickname:<div class="card__user"><%= @cat_post.user.nickname %></div>
-      Title:<div class="card__title"><%= @cat_post.cat_post_title %></div> 
-      Message:<div class="card__title"><%= @cat_post.cat_post_text %></div> 
+      Nickname:<div class="posted__user"><%= @cat_post.user.nickname %></div>
+      Title:<div class="posted__title"><%= @cat_post.cat_post_title %></div> 
+      Message:<div class="posted__text"><%= @cat_post.cat_post_text %></div> 
+      Posted at:<div class="posted__time"><%= @cat_post.created_at.to_s(:datetime_jp) %></div> 
     </div>
-    
+
     <div class="posted_comments">
       <div class="posted_comment_title">Comments</div>
       <div class="comment_wrapper">
+    <% if @cat_post_comments.present? %>
       <% @cat_post_comments.each do |comment| %>
         <ul comment_info>
           <li class="comment_user"><%= comment.user.nickname %></li>
           <li class="posted_comment"><%= comment.cat_post_comment %></li>
         </ul>
-      <% end %>
+    <% end %>
+      <% else %>
+        <div class="no_post_comment">コメントはありません</div>
+    <% end %>
       </div>
     </div>
   </div>
