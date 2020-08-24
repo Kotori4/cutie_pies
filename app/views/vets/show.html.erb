@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+
+<body class="food_body">
+  <h1 class="share_food_title">SHARE YOUR RECOMMENDATION FOR CUTIES </h1>
+
+
+  <div class="posted_food_info">  
+    <div class="food_image">
+      <% if @vet.vet_image.present? %>
+        <%= image_tag @vet.vet_image, class:"posted_picture" %> 
+      <% else%>
+        <%= image_tag "no_image_available.png", class:"posted_picture" %>
+      <% end %>
+    </div>
+    <div class="posted_foods">
+      <div class="food_posted_user">Nickname:  <%= @vet.user.nickname %></div>
+      <div class="posted_food_title">Title:  <%= @vet.vet_title %></div> 
+      <div class="posted_food_time">Posted at: <%= @vet.created_at.to_s(:datetime_jp) %></div> 
+      <div class="posted_food_text">Messages:  <%= @vet.vet_text %></div> 
+    </div>
+  </div>
+
+ 
+    <div class="top_page_link">
+      <%= link_to "前のページに戻る", :back %>
+    </div>
+</body>
+
+
+<%= render "shared/footer" %>

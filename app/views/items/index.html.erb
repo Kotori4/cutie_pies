@@ -7,7 +7,6 @@
     <%= link_to "◎ おすすめを投稿する ◎", new_item_path, class:"share_food_btn" %>
   </div>
 
-
     <% @items.each do |item| %>
       <ul>
         <%= link_to item_path(item), method: :get do %>

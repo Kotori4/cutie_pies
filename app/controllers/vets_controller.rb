@@ -1,5 +1,4 @@
 class VetsController < ApplicationController
-  class ItemsController < ApplicationController
 
     def index
       @vets = Vet.all.includes(:user).order("created_at DESC").page(params[:page]).per(10)
@@ -19,9 +18,9 @@ class VetsController < ApplicationController
     end
   
     def show
-      @vet = Item.find(params[:id])
-      @vet_comment = VetComment.new
-      @vet_comments = @vet.vet_comments.includes(:user).order("created_at DESC")
+      @vet = Vet.find(params[:id])
+      # @vet_comment = VetComment.new
+      # @vet_comments = @vet.vet_comments.includes(:user).order("created_at DESC")
     end
   
     private
@@ -29,4 +28,4 @@ class VetsController < ApplicationController
       params.require(:vet).permit(:vet_image, :vet_title, :vet_text).merge(user_id: current_user.id)
     end
   end
-end
+
