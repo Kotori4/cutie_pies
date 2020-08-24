@@ -15,7 +15,7 @@
     <div class="posted_foods">
       <div class="food_posted_user">Nickname:  <%= @food.user.nickname %></div>
       <div class="posted_food_title">Title:  <%= @food.food_title %></div> 
-      <div class="posted_food_time">Created at: <%= @food.created_at.to_s(:datetime_jp) %></div> 
+      <div class="posted_food_time">Posted at: <%= @food.created_at.to_s(:datetime_jp) %></div> 
       <div class="posted_food_text">Messages:  <%= @food.food_text %></div> 
     </div>
   </div>
@@ -26,12 +26,14 @@
           <ul class="food_comment_list">
             <li class="food_comment_user"><%= fc.user.nickname %>：</li>
             <li class="posted_food_comment"><%= fc.food_comment %><span class="food__time">   (<%= fc.created_at.to_s(:datetime_jp) %>)</span></li>
+            <%# <%= raw Rinku.auto_link(h(fc.food_comment, :all, 'target="_blank"')).html_safe %> %>
           </ul>
         <% end %>
       <% else %>
         <div class="no_food_comment">コメントはありません</div>
     <% end %>
     </div>
+
 
 
 

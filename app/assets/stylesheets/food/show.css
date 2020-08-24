@@ -5,7 +5,10 @@
 
 .posted_foods {
   margin: 30px 80px 20px 0;
+  width: 40vw;
+  word-wrap: break-word;
 }
+
 .food_posted_user {
   margin-bottom: 5px;
   font-size: 15px;
