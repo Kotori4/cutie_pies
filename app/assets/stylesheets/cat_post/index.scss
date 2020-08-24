@@ -105,12 +105,14 @@ h3 {
 
 .recommended_list {
   display: inline-block;
+  justify-content: space-around;
+  margin-right: 1vw;
+  margin-left: 1vw;
 }
 
 .recommendation_title{
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-around;
   font-size: 23px;
   margin-top: 8px;
 }

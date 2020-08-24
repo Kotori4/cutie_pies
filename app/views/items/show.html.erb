@@ -1,0 +1,49 @@
+<%= render "shared/header" %>
+
+<body class="food_body">
+  <h1 class="share_food_title">SHARE YOUR RECOMMENDATION FOR CUTIES </h1>
+
+
+  <div class="posted_food_info">  
+    <div class="food_image">
+      <% if @item.item_image.present? %>
+        <%= image_tag @item.item_image, class:"posted_picture" %> 
+      <% else%>
+        <%= image_tag "no_image_available.png", class:"posted_picture" %>
+      <% end %>
+    </div>
+    <div class="posted_foods">
+      <div class="food_posted_user">Nickname:  <%= @item.user.nickname %></div>
+      <div class="posted_food_title">Title:  <%= @item.item_title %></div> 
+      <div class="posted_food_time">Posted at: <%= @item.created_at.to_s(:datetime_jp) %></div> 
+      <div class="posted_food_text">Messages:  <%= @item.item_text %></div> 
+    </div>
+  </div>
+
+    <div class="food_comment_info">
+    <% if @item_comments.present? %>
+        <% @item_comments.each do |ic| %>
+          <ul class="food_comment_list">
+            <li class="food_comment_user"><%= ic.user.nickname %>：</li>
+            <li class="posted_food_comment"><%= ic.item_comment %><span class="food__time">   (<%= ic.created_at.to_s(:datetime_jp) %>)</span></li>
+          </ul>
+        <% end %>
+      <% else %>
+        <div class="no_food_comment">コメントはありません</div>
+    <% end %>
+    </div>
+
+  <div class="container">
+      <%= form_with(model: [@item_comment,@item], url:item_item_comments_path(@item), method: :post, local: true) do |f| %>
+        <%= f.text_area :item_comment, placeholder: "コメントを入力", class:"comment_field food_comment_field" %>
+      <div><%= f.submit "コメントする", class:"food_comment_btn" %></div>
+      <% end %>
+  </div>
+
+    <div class="top_page_link">
+      <%= link_to "前のページに戻る", :back %>
+    </div>
+</body>
+
+
+<%= render "shared/footer" %>
