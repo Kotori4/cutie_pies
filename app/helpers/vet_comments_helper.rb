@@ -1,0 +1,2 @@
+module VetCommentsHelper
+end

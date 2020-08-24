@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "main#index"
-  resources :vets
+  
+  resources :vets do
+  resources :vet_comments, only: :create
+end
   
   resources :items do
     resources :item_comments, only: :create

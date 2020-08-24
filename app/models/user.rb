@@ -11,6 +11,7 @@ class User < ApplicationRecord
          has_many :items, dependent: :destroy
          has_many :item_comments, dependent: :destroy
          has_many :vets, dependent: :destroy
+         has_many :vet_comments, dependent: :destroy
          
          with_options presence: true do
           validates :nickname

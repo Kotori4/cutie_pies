@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_24_080313) do
+ActiveRecord::Schema.define(version: 2020_08_24_093625) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -106,6 +106,16 @@ ActiveRecord::Schema.define(version: 2020_08_24_080313) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "vet_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "vet_id"
+    t.text "vet_comment", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_vet_comments_on_user_id"
+    t.index ["vet_id"], name: "index_vet_comments_on_vet_id"
+  end
+
   create_table "vets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "vet_title", null: false
@@ -125,5 +135,7 @@ ActiveRecord::Schema.define(version: 2020_08_24_080313) do
   add_foreign_key "item_comments", "items"
   add_foreign_key "item_comments", "users"
   add_foreign_key "items", "users"
+  add_foreign_key "vet_comments", "users"
+  add_foreign_key "vet_comments", "vets"
   add_foreign_key "vets", "users"
 end

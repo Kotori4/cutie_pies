@@ -19,8 +19,8 @@ class VetsController < ApplicationController
   
     def show
       @vet = Vet.find(params[:id])
-      # @vet_comment = VetComment.new
-      # @vet_comments = @vet.vet_comments.includes(:user).order("created_at DESC")
+      @vet_comment = VetComment.new
+      @vet_comments = @vet.vet_comments.includes(:user).order("created_at DESC")
     end
   
     private
