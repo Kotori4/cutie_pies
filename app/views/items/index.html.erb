@@ -1,0 +1,27 @@
+<%= render "shared/header" %>
+
+
+<body class="food_body">
+  <h1 class="share_food_title">SHARE YOUR RECOMMENDATION FOR CUTIES </h1>
+  <div class="share_food_btn_wrapper">
+    <%= link_to "◎ おすすめを投稿する ◎", new_item_path, class:"share_food_btn" %>
+  </div>
+
+
+    <% @items.each do |item| %>
+      <ul>
+        <%= link_to item_path(item), method: :get do %>
+          <li class="food_recommend_title">Title:  <%= item.item_title %><span class="food__time">  (<%= item.created_at.to_s(:datetime_jp) %>)</span></li>
+          <li class="food_recommend_text"><%= item.item_text %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <%= paginate @items %>
+
+    <div class="top_page_link">
+      <%= link_to "トップページに戻る", "/" %>
+    </div>
+</body>
+
+
+<%= render "shared/footer" %>

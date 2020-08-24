@@ -2,8 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "main#index"
-  resources :items
-
+  
+  resources :items do
+    resources :item_comments, only: :create
+  end
+  
   resources :foods do 
     resources :food_comments, only: :create
   end

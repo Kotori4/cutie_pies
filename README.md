@@ -119,29 +119,29 @@ has_many   :food_comments
 belongs_to :user
 belongs_to :food
 
-## goods テーブル
+## items テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
-| goods_title      | string     | default: "", null: false       |
-| goods_text       | text       | default: "", null: false       |
+| items_title      | string     | default: "", null: false       |
+| items_text       | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
-has_many   :goods_comments
+has_many   :items_comments
 
-## goods_comments テーブル
+## items_comments テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | user_id          | references | null: false, foreign_key: true |
-| vet_id           | references | null: false, foreign_key: true |
-| goods_comment    | text       | default: "", null: false       |
+| item_id           | references | null: false, foreign_key: true |
+| items_comment    | text       | default: "", null: false       |
 
 ### Association
 belongs_to :user
-belongs_to :goods
+belongs_to :items
 
 ## vets テーブル
 
