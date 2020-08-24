@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root "main#index"
+  
   resources :vets do
   resources :vet_comments, only: :create
 end

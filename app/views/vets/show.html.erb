@@ -20,7 +20,26 @@
     </div>
   </div>
 
- 
+     <div class="food_comment_info">
+    <% if @vet_comments.present? %>
+        <% @vet_comments.each do |v| %>
+          <ul class="food_comment_list">
+            <li class="food_comment_user"><%= v.user.nickname %>：</li>
+            <li class="posted_food_comment"><%= v.vet_comment %><span class="food__time">   (<%= v.created_at.to_s(:datetime_jp) %>)</span></li>
+          </ul>
+        <% end %>
+      <% else %>
+        <div class="no_food_comment">コメントはありません</div>
+    <% end %>
+    </div>
+
+  <div class="container">
+      <%= form_with(model: [@vet_comment,@vet], url:vet_vet_comments_path(@vet), method: :post, local: true) do |f| %>
+        <%= f.text_area :vet_comment, placeholder: "コメントを入力", class:"comment_field food_comment_field" %>
+      <div><%= f.submit "コメントする", class:"food_comment_btn" %></div>
+      <% end %>
+  </div>
+
     <div class="top_page_link">
       <%= link_to "前のページに戻る", :back %>
     </div>
