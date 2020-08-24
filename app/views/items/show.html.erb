@@ -26,7 +26,6 @@
           <ul class="food_comment_list">
             <li class="food_comment_user"><%= ic.user.nickname %>：</li>
             <li class="posted_food_comment"><%= ic.item_comment %><span class="food__time">   (<%= ic.created_at.to_s(:datetime_jp) %>)</span></li>
-            <%# <%= raw Rinku.auto_link(h(fc.food_comment, :all, 'target="_blank"')).html_safe %>
           </ul>
         <% end %>
       <% else %>
