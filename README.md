@@ -95,6 +95,54 @@ has_many   :dog_post_comments
 belongs_to :user
 belongs_to :dog_post
 
+## foods テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user_id          | references | null: false, foreign_key: true |
+| food_title       | string     | default: "", null: false       |
+| food_text        | text       | default: "", null: false       |
+
+### Association
+belongs_to :user
+has_many   :food_comments
+
+## food_comments テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user_id          | references | null: false, foreign_key: true |
+| food_id          | references | null: false, foreign_key: true |
+| food_comment     | text       | default: "", null: false       |
+
+### Association
+belongs_to :user
+belongs_to :food
+
+## goods テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user_id          | references | null: false, foreign_key: true |
+| goods_title      | string     | default: "", null: false       |
+| goods_text       | text       | default: "", null: false       |
+
+### Association
+belongs_to :user
+has_many   :goods_comments
+
+## goods_comments テーブル
+
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| user_id          | references | null: false, foreign_key: true |
+| vet_id           | references | null: false, foreign_key: true |
+| goods_comment    | text       | default: "", null: false       |
+
+### Association
+belongs_to :user
+belongs_to :goods
+
 ## vets テーブル
 
 | Column           | Type       | Options                        |
@@ -119,29 +167,6 @@ has_many   :vet_comments
 belongs_to :user
 belongs_to :vet
 
-## foods テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| user_id          | references | null: false, foreign_key: true |
-| food_title       | string     | default: "", null: false       |
-| food_text        | text       | default: "", null: false       |
-
-### Association
-belongs_to :user
-has_many   :food_comments
-
-## food_comments テーブル
-
-| Column           | Type       | Options                        |
-| ---------------- | ---------- | ------------------------------ |
-| user_id          | references | null: false, foreign_key: true |
-| food_id          | references | null: false, foreign_key: true |
-| food_comment     | text       | default: "", null: false       |
-
-### Association
-belongs_to :user
-belongs_to :food
 
 
 ## chats テーブル
