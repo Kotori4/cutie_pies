@@ -11,10 +11,6 @@ end
     resources :item_comments, only: :create
   end
   
-  resources :foods do 
-    resources :food_comments, only: :create
-  end
-  
   resources :cat_post do
     resources :cat_post_comments, only: :create
     collection do 

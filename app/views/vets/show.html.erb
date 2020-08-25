@@ -1,42 +1,42 @@
 <%= render "shared/header" %>
 
-<body class="food_body">
-  <h1 class="share_food_title">SHARE YOUR RECOMMENDATION FOR CUTIES </h1>
+<body class="shares_body">
+  <h1 class="share_title">SHARE YOUR RECOMMENDATION FOR CUTIES </h1>
 
 
-  <div class="posted_food_info">  
-    <div class="food_image">
+  <div class="posted_share_info">  
+    <div class="posted_image">
       <% if @vet.vet_image.present? %>
         <%= image_tag @vet.vet_image, class:"posted_picture" %> 
       <% else%>
         <%= image_tag "no_image_available.png", class:"posted_picture" %>
       <% end %>
     </div>
-    <div class="posted_foods">
-      <div class="food_posted_user">Nickname:  <%= @vet.user.nickname %></div>
-      <div class="posted_food_title">Title:  <%= @vet.vet_title %></div> 
-      <div class="posted_food_time">Posted at: <%= @vet.created_at.to_s(:datetime_jp) %></div> 
-      <div class="posted_food_text">Messages:  <%= @vet.vet_text %></div> 
+    <div class="posted_shares">
+      <div class="share_posted_user">Nickname:  <%= @vet.user.nickname %></div>
+      <div class="posted_share_title">Title:  <%= @vet.vet_title %></div> 
+      <div class="posted_share_time">Posted at: <%= @vet.created_at.to_s(:datetime_jp) %></div> 
+      <div class="posted_share_text">Messages:  <%= @vet.vet_text %></div> 
     </div>
   </div>
 
-     <div class="food_comment_info">
+     <div class="share_comment_info">
     <% if @vet_comments.present? %>
         <% @vet_comments.each do |v| %>
-          <ul class="food_comment_list">
-            <li class="food_comment_user"><%= v.user.nickname %>：</li>
-            <li class="posted_food_comment"><%= v.vet_comment %><span class="food__time">   (<%= v.created_at.to_s(:datetime_jp) %>)</span></li>
+          <ul class="share_comment_list">
+            <li class="share_comment_user"><%= v.user.nickname %>：</li>
+            <li class="posted_share_comment"><%= v.vet_comment %><span class="share_comment_time">   (<%= v.created_at.to_s(:datetime_jp) %>)</span></li>
           </ul>
         <% end %>
       <% else %>
-        <div class="no_food_comment">コメントはありません</div>
+        <div class="no_comment">コメントはありません</div>
     <% end %>
     </div>
 
   <div class="container">
       <%= form_with(model: [@vet_comment,@vet], url:vet_vet_comments_path(@vet), method: :post, local: true) do |f| %>
-        <%= f.text_area :vet_comment, placeholder: "コメントを入力", class:"comment_field food_comment_field" %>
-      <div><%= f.submit "コメントする", class:"food_comment_btn" %></div>
+        <%= f.text_area :vet_comment, placeholder: "コメントを入力", class:"comment_field share_comment_field" %>
+      <div><%= f.submit "コメントする", class:"share_comment_btn" %></div>
       <% end %>
   </div>
 

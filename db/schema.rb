@@ -52,25 +52,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_093625) do
     t.index ["user_id"], name: "index_cat_posts_on_user_id"
   end
 
-  create_table "food_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "food_id"
-    t.text "food_comment", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["food_id"], name: "index_food_comments_on_food_id"
-    t.index ["user_id"], name: "index_food_comments_on_user_id"
-  end
-
-  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "food_title", null: false
-    t.text "food_text", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_foods_on_user_id"
-  end
-
   create_table "item_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "item_id"
@@ -129,9 +110,6 @@ ActiveRecord::Schema.define(version: 2020_08_24_093625) do
   add_foreign_key "cat_post_comments", "cat_posts"
   add_foreign_key "cat_post_comments", "users"
   add_foreign_key "cat_posts", "users"
-  add_foreign_key "food_comments", "foods"
-  add_foreign_key "food_comments", "users"
-  add_foreign_key "foods", "users"
   add_foreign_key "item_comments", "items"
   add_foreign_key "item_comments", "users"
   add_foreign_key "items", "users"
