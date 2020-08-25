@@ -1,17 +1,17 @@
 <%= render "shared/header" %>
 
 
-<body class="food_body">
-  <h1 class="share_food_title">ASK YOUR QUESTION or SHARE YOUR RECOMMENDAION </h1>
-  <div class="share_food_btn_wrapper">
-    <%= link_to "◎ 質問・おすすめを投稿する ◎", new_vet_path, class:"share_food_btn" %>
+<body class="shares_body">
+  <h1 class="share_title">ASK YOUR QUESTION or SHARE YOUR RECOMMENDAION </h1>
+  <div class="share_btn_wrapper">
+    <%= link_to "◎ 質問・おすすめを投稿する ◎", new_vet_path, class:"share_btn" %>
   </div>
 
     <% @vets.each do |vet| %>
       <ul>
         <%= link_to vet_path(vet), method: :get do %>
-          <li class="food_recommend_title">Title:  <%= vet.vet_title %><span class="food__time">  (<%= vet.created_at.to_s(:datetime_jp) %>)</span></li>
-          <li class="food_recommend_text"><%= vet.vet_text %></li>
+          <li class="recommended_title">Title:  <%= vet.vet_title %><span class="share_comment_time">  (<%= vet.created_at.to_s(:datetime_jp) %>)</span></li>
+          <li class="recommended_text"><%= vet.vet_text %></li>
         <% end %>
       </ul>
     <% end %>

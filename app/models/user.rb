@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
          has_many :cat_posts, dependent: :destroy
          has_many :cat_post_comments, dependent: :destroy
-         has_many :foods, dependent: :destroy
-         has_many :food_comments, dependent: :destroy
          has_many :items, dependent: :destroy
          has_many :item_comments, dependent: :destroy
          has_many :vets, dependent: :destroy
