@@ -100,7 +100,13 @@ h3 {
   width: 45vh;
   height: 45vh;
   border-radius: 50%;
+  transition: 0.6s;
   border: 3px solid gray;
+}
+.recommendations_main  img:hover {
+  transform: scale(0.9);
+  transition-duration: 0.6s;
+  opacity: 0.9;
 }
 
 .recommended_list {
@@ -116,10 +122,5 @@ h3 {
   margin-top: 8px;
 }
  
-.recommendations_main  img:hover {
-  transform: scale(0.9);
-  transition-duration: 0.6s;
-  opacity: 0.9;
-}
 
 
