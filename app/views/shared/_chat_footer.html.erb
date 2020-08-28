@@ -1,0 +1,12 @@
+<footer class="fixed-bottom" id="footer">
+  <%= form_with(model:[@room, @message], url:room_messages_path(:room_id), method: :post,) do |f| %>
+    <div class="message_form-group">
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+
+    <div class="message_form-group">
+      <%= f.submit '送信', class: 'send_btn', id: 'message-button' %>
+    </div>
+  <% end %>
+</footer>
+

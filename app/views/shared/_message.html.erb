@@ -1,0 +1,12 @@
+<div id="message-container">
+  <div class="messages" id="message-<%= @message.id %>"></div>
+
+  <div class="messages_wrap">
+    <div class="user_name_wrapper"> 
+      <div class="chat_user_name"><%= @message.user.nickname %></div>
+    </div>
+    <div class="chat_message_wrapper">
+      <div class="chat_messages"><%= simple_format @message.content %></div>
+    </div>
+  </div>
+</div>
