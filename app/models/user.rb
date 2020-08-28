@@ -10,7 +10,12 @@ class User < ApplicationRecord
          has_many :item_comments, dependent: :destroy
          has_many :vets, dependent: :destroy
          has_many :vet_comments, dependent: :destroy
-         
+         has_many :room_users
+         has_many :rooms, through: :room_users
+         has_many :messages, dependent: :destroy
+
+
+
          with_options presence: true do
           validates :nickname
           validates :password, format: { with: /\A[a-z]+[0-9]+\z/i}

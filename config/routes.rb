@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  mount ActionCable.server => '/cable'
   root "main#index"
   
+  resources :rooms, only: [:index, :show, :new, :create] do
+    resources :messages, only: [:create] 
+  end
+    
   resources :vets do
   resources :vet_comments, only: :create
 end

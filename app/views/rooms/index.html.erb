@@ -1,0 +1,24 @@
+<%= render "shared/header" %>
+
+<body class="shares_body">
+  <h1 class="share_title">CHAT ROOMS </h1>
+  <div class="share_btn_wrapper">
+    <%= link_to "◎ チャットルームを作る ◎", new_room_path, class:"share_btn" %>
+  </div>
+
+    <% @rooms.each do |room| %>
+      <ul>
+        <%= link_to room_path(room), method: :get do %>
+          <li class="chat_room_name">Chat Room Name:  <%= room.name %><span class="share_comment_time">  <%= room.created_at.to_s(:datetime_jp) %></span></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <%= paginate @rooms %>
+
+    <div class="top_page_link">
+      <%= link_to "トップページに戻る", "/" %>
+    </div>
+</body>
+
+
+<%= render "shared/footer" %>
