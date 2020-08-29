@@ -16,7 +16,11 @@
         <ul>
           <% if user_signed_in? %> 
             <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
-            <li><%= link_to current_user.nickname, class: "header_list" %></li>
+            <li class="header_list">
+            <%= link_to edit_user_registration_path do %>
+              <%= current_user.nickname %>
+            <% end %>
+            </li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header_list" %></li>
           <% else %>
             <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
