@@ -1,0 +1,62 @@
+<%= render "shared/second-header" %>
+
+<div class="user_registration_main">
+  <%= form_with model:@user, url:user_registration_path, class:"registration_main", local: true do |f| %> 
+    <div class="user_registration_header">
+      <h2 class="user_registration_title">ユーザー情報編集</h2>
+    </div>
+
+        <div class="user_registration_wrap">
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ニックネーム</label>
+        </div>
+          <%= f.text_field :nickname, class:"input-default", id:"post_title", placeholder:"ニックネーム(11文字まで)", maxlength:"11" %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">メールアドレス</label>
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード</label><span class='info-text'>※6文字以上半角英数字</span>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワードの入力" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード(確認)</label>
+        </div>
+        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">猫派？犬派？</label>
+        </div>
+        <%= f.collection_select(:favorite_id, Favorite.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ペットの有無</label>
+        </div>
+        <%= f.collection_select(:have_pet_id, HavePet.all, :id, :name, {include_blank: "---"}, {class:"select-box", id:"item-scheduled-delivery"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ペットの名前</label>
+        </div>
+          <%= f.text_field :pet_name, class:"input-default", id:"post_title", placeholder:"ペットの名前(11文字まで)", maxlength:"11" %>
+      </div>
+      <div class="registration-btn">
+        <input class="form-submit" type="submit" value="登録する">
+      </div>
+      </div>  
+    </div>
+  <% end %> 
+</div>
+
+
+<%= render "shared/second-footer" %>
