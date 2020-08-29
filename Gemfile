@@ -68,3 +68,7 @@ gem "aws-sdk-s3", require: false
 gem 'kaminari'
 gem 'rinku'
 gem 'jquery-rails'
+
+group :production do
+  gem 'rails_12factor'
+end
