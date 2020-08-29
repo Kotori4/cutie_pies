@@ -1,9 +1,8 @@
 * {
   font-family: Courier, Times;
-
 }
 
-a {
+a:hover {
   color: rgb(62,62,62);
   text-decoration: none;
 }
