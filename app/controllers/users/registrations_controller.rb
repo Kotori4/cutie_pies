@@ -45,6 +45,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
+  def destroy
+    if current_user.destroy
+      redirect_to root_path, notice: "ユーザを削除しました。"
+    else
+      render 'edit'
+    end
+  end
+
   private
   
   def user_params
