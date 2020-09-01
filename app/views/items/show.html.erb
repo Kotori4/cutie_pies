@@ -16,7 +16,7 @@
       <div class="share_posted_user">Nickname:  <%= @item.user.nickname %></div>
       <div class="posted_share_title">Title:  <%= @item.item_title %></div> 
       <div class="posted_share_time">Posted at: <%= @item.created_at.to_s(:datetime_jp) %></div> 
-      <div class="posted_share_text">Messages:  <%= @item.item_text %></div> 
+     <div class="posted_share_text">Messages: <%= Rinku.auto_link(@item.item_text, :all, 'target="_blank"').html_safe %></div> 
     </div>
   </div>
 
@@ -25,13 +25,16 @@
         <% @item_comments.each do |ic| %>
           <ul class="share_comment_list">
             <li class="share_comment_user"><%= ic.user.nickname %>：</li>
-            <li class="posted_share_comment"><%= ic.item_comment %><span class="share_comment_time">   (<%= ic.created_at.to_s(:datetime_jp) %>)</span></li>
+            <li class="posted_share_comment"><%= Rinku.auto_link(ic.item_comment, :all, 'target="_blank"').html_safe %><span class="share_comment_time">   (<%= ic.created_at.to_s(:datetime_jp) %>)</span></li>
           </ul>
         <% end %>
       <% else %>
         <div class="no_comment">コメントはありません</div>
     <% end %>
     </div>
+
+
+
 
   <div class="container">
       <%= form_with(model: [@item_comment,@item], url:item_item_comments_path(@item), method: :post, local: true) do |f| %>
