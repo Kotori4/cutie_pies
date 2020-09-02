@@ -44,6 +44,8 @@ has_many :dog_posts
 has_many :dog_post_comments
 has_many :vets
 has_many :vet_comments
+has_many :items
+has_many :items_comments
 has_many :chats
 has_many :chat_comments
 
@@ -102,6 +104,7 @@ belongs_to :dog_post
 | user_id          | references | null: false, foreign_key: true |
 | items_title      | string     | default: "", null: false       |
 | items_text       | text       | default: "", null: false       |
+| items_link       | text       |                                |
 
 ### Association
 belongs_to :user
