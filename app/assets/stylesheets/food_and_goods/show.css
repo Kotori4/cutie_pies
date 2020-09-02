@@ -30,6 +30,20 @@
   font-size: 15px;
 }
 
+.posted_share_item_link {
+  /* display: none; */
+  background-image: url(.amazon_image);
+}
+
+.rinku {
+
+}
+
+.amazon_image {
+  width: 25%;
+  height: 20%;
+}
+
 .share_comment_info {
   padding: 40px 0 0 0;
 }

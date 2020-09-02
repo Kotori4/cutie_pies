@@ -19,12 +19,17 @@
         </div>
           <%= f.text_field :item_title, class:"post_title", id:"post_title", placeholder:"タイトル(22文字まで)", maxlength:"22" %>
       </div>
-
       <div class="post-form-group">
         <div class='post-form-wrap'>
           <label class="post-form-text">おすすめの詳細</label>
         </div>
         <%= f.text_area :item_text, class:"post_message", id:"post_message", placeholder:"おすすめの詳細(385文字まで)", maxlength:"385" %>
+      </div>
+      <div class="post-form-group">
+        <div class='post-form-wrap'>
+          <label class="post-form-text">Amazon商品リンク</label>
+        </div>
+          <%= f.text_field :item_link, class:"post_title", id:"post_title", placeholder:"Amazon商品ページリンク(オプション)" %>
       </div>
 
       <%= f.submit "投稿する" ,class:"form-submit" %>
