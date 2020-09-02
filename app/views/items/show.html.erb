@@ -17,11 +17,11 @@
       <div class="posted_share_title">Title:  <%= @item.item_title %></div> 
       <div class="posted_share_time">Posted at: <%= @item.created_at.to_s(:datetime_jp) %></div> 
      <div class="posted_share_text">Messages: <%= Rinku.auto_link(@item.item_text, :all, 'target="_blank"').html_safe %></div> 
-     <% if @item.item_link %>
+     <% if @item.item_link.present? %>
       <div class="posted_share_item_link">
         <%= image_tag "amazon_logo.jpg", class:"amazon_image" %>
-        <%= Rinku.auto_link(@item.item_link, :all, 'target="_blank"' ).html_safe %>	
-      </div> 
+        <%= Rinku.auto_link(@item.item_link, :all, 'target="_blank"' ).html_safe %>
+      </div>
      <% end %>
     </div>
   </div>
