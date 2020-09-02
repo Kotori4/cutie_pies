@@ -31,7 +31,5 @@ describe Item do
       @item.valid?
       expect(@item.errors.full_messages).to include("Item textを入力してください")
     end
-
   end
-
 end

@@ -19,8 +19,11 @@
      <div class="posted_share_text">Messages: <%= Rinku.auto_link(@item.item_text, :all, 'target="_blank"').html_safe %></div> 
      <% if @item.item_link.present? %>
       <div class="posted_share_item_link">
+      <label>
+        <%= Rinku.auto_link(@item.item_link, :all, 'target="_blank"' ).html_safe do %>
         <%= image_tag "amazon_logo.jpg", class:"amazon_image" %>
-        <%= Rinku.auto_link(@item.item_link, :all, 'target="_blank"' ).html_safe %>
+        <% end %>
+      </label>
       </div>
      <% end %>
     </div>
