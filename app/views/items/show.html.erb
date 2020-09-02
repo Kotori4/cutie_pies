@@ -17,6 +17,12 @@
       <div class="posted_share_title">Title:  <%= @item.item_title %></div> 
       <div class="posted_share_time">Posted at: <%= @item.created_at.to_s(:datetime_jp) %></div> 
      <div class="posted_share_text">Messages: <%= Rinku.auto_link(@item.item_text, :all, 'target="_blank"').html_safe %></div> 
+     <% if @item.item_link %>
+      <div class="posted_share_item_link">
+        <%= Rinku.auto_link(@item.item_link, :all, 'target="_blank"' ).html_safe %>	
+        <%= image_tag "amazon_logo.jpg", class:"amazon_image" %>
+      </div> 
+     <% end %>
     </div>
   </div>
 
@@ -32,9 +38,6 @@
         <div class="no_comment">コメントはありません</div>
     <% end %>
     </div>
-
-
-
 
   <div class="container">
       <%= form_with(model: [@item_comment,@item], url:item_item_comments_path(@item), method: :post, local: true) do |f| %>
