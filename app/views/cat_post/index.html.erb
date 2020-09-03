@@ -12,7 +12,7 @@
                   <%= image_tag cat.cat_image, class:"posted_pic" %>
                   <div class="card__text">
                     <div class="card__user">
-                    <%= link_to "/users/#{current_user.id}" do%> 
+                    <%= link_to "/users/#{cat.user.id}" do%> 
                     <%= cat.user.nickname %>
                     <% end %>
                     </div>

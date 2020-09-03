@@ -6,7 +6,10 @@
   </div>
   <div class="posted_info">  
     <div class="user_posted">
-      Nickname:<div class="posted__user"><%= @cat_post.user.nickname %></div>
+      Nickname:<div class="posted__user"><%= link_to "/users/#{@cat_post.user.id}" do%> 
+      <%= @cat_post.user.nickname %>
+      <% end %>
+      </div>
       Title:<div class="posted__title"><%= @cat_post.cat_post_title %></div> 
       Message:<div class="posted__text"><%= @cat_post.cat_post_text %></div> 
       Posted at:<div class="posted__time"><%= @cat_post.created_at.to_s(:datetime_jp) %></div> 

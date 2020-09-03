@@ -32,6 +32,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def edit
   end
 
+  def show
+  @user = User.find(params[:user_id])
+  end
+
   def update
     if @user = current_user.update(user_params)
       sign_in(current_user, bypass: true)
