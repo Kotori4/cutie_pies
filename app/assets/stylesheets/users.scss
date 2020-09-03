@@ -1,0 +1,25 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.my_page_body {
+  background-color: rgb(255, 248, 250);
+}
+
+.my_page_wrapper {
+  text-align: center;
+}
+
+.nickname {
+  margin: 50px 10px 40px 10px;
+  border-bottom: 2px solid rgb(62,62,62);
+}
+
+.posted_shares {
+  display: flex;
+  justify-content: space-around;
+}
+
+.posted_recomm {
+
+}

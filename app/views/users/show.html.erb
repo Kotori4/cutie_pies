@@ -1,0 +1,18 @@
+<%= render "shared/header" %>
+
+<body class="my_page_body">
+  <div class="my_page_wrapper">
+    <h1 class="nickname"><%= @user.nickname %>'s page</h1>
+    <div>ここに写真一覧にする</div>
+    <ul class="posted_shares">
+      <li class="posted_recomm">ここにおすすめの一覧</li>
+      <li>ここにチャットルーム一覧</li>
+    </ul>
+  </div>
+      <div class="top_page_link">
+        <%= link_to "トップページに戻る", "/" %>
+      </div>
+</body>
+
+
+<%= render "shared/footer" %>
