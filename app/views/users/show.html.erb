@@ -1,0 +1,48 @@
+<%= render "shared/header" %>
+
+<body class="my_page_body">
+  <div class="my_page_wrapper">
+    <div class="nickname_wrap"> 
+      <h1 class="nickname"><%= @user.nickname %>'s page</h1>
+    </div>
+      <div class="my_page_recommend_title">投稿した写真</div>
+       <div class="my_page_pic_wrapper">
+       <% if @cat_posts.present? %>
+        <% @cat_posts.each do |c| %>
+          <%= link_to cat_post_path(c), method: :get do %>
+            <div class="my_page_card__body">
+              <%= image_tag c.cat_image, class:"posted_pic" %> 
+              <div class="my_page_card__text">
+              Posted at: <div class="my_page_time"><%= c.created_at.to_s(:datetime_jp) %></div>
+              </div>  
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <div>投稿した写真はありません。</div>
+      <% end %>
+      </div>
+      <div class="my_page_shares">
+        <ul class="posted_recomm">
+          <p class="my_page_recommend_title">投稿したオススメ</p>
+          <% if @items.present? %>
+            <% @items.each do |i| %>
+              <%= link_to item_path(i), method: :get do %>
+                <li class="my_page_share_title">Title:  <%= i.item_title %><span class="my_page_share_time">  (<%= i.created_at.to_s(:datetime_jp) %>)</span></li>
+              <% end %>
+            <% end %>
+          <% else %>
+            <div class="none_recommended">投稿したおすすめはありません。</div>
+          <% end %>
+        </ul>
+      </div>
+  </div>
+
+  <div class="top_page_link">
+    <%= link_to "トップページに戻る", "/" %>
+  </div>
+</body>
+
+
+<%= render "shared/footer" %>
+

@@ -29,11 +29,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  def show
-    @user = User.find(params[:id])
+  def edit
   end
 
-  def edit
+  def show
+  @user = User.find(params[:user_id])
   end
 
   def update

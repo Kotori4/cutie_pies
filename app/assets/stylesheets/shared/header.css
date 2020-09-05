@@ -1,3 +1,5 @@
+/* header全体のCSS */
+
 * {
   font-family: Courier, Times;
 }
@@ -11,11 +13,13 @@ a:visited {
   color: rgb(62,62,62);
 }
 
+/* header左側のCSS */
+
 .site_header {
   border: 2px solid rgb(62,62,62);
   height: 200px;
   width: 100vw;
-   display: flex;
+  display: flex;
   justify-content: space-between;
   background-color:rgb(255, 255, 255);
 }
@@ -25,8 +29,6 @@ a:visited {
   font-size: 70px;
   margin-bottom: 30px;
   padding: 20px;
-  display: flex;
-  align-items: center;
   top: 15px;
   left: 15px;
 }
@@ -52,6 +54,8 @@ a:visited {
   width: 100px;
 }
 
+/* header右側のCSS */
+
 .header_lists {
   color: rgb(118, 118, 118);
   font-size: 15px;
@@ -60,14 +64,36 @@ a:visited {
   align-items: flex-end;
 }
 
-.header_lists a{
-  color: rgb(62,62,62);
+.header_lists li{
+  margin: 0 15px 20px 15px;
 }
 
-.header_lists li{
-  color: rgb(62,62,62);
-  margin: 0 15px 20px 15px;
-  display: inline-block;
+.header_lists_wrapper {
+  display: flex;
+  height: 2rem;
+}
+
+.header_lists_wrapper li{
+  position: relative;
+  display: block;
+    color: #fff;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.header_lists_wrapper li li {
+  height: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.header_lists_wrapper li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+  background-color: white;
+  border: 1px solid rgb(62,62,62);
+  margin: 8px;
 }
 
 .header_list :hover :active {
@@ -75,3 +101,8 @@ a:visited {
   transition-duration: 0.6s;
   opacity: 0.9;
 }
+
+.header_lists_wrapper li > ul > li:hover{
+  background-color: rgb(220, 220, 220);
+}
+
