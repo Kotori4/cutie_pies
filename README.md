@@ -1,32 +1,20 @@
-# README
+# README FOR CUTIE PIES
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+## Overview
+* CUTIE PIES to share your pets pictures and recommendation of items, foods, vets etc..
+Also can ask your problems to live healthy and happy together.
 
-* Ruby version
+## Description
+* Need to make your own account to use CUTIE PIES, just put your nickname( the other user can see your nickname), email address, password and your pet info as well.
+Then, share your pictures or just look around other cats or dog or talk to someone about your problems or life style whatever you feel like.
+Just click your nickname on the header when you want to change your account information, also can delete your account on the page but you could not undo after delete it, please make your account again if you want it again.
+
+### Ruby version
 ruby 2.6.5
 Rails 6.0.3.2
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-## users テーブル
+## users table
 
 | Column                | Type    | Options     |
 | --------------------- | ------- | ----------- |
@@ -49,7 +37,7 @@ has_many :items_comments
 has_many :chats
 has_many :chat_comments
 
-## cat_posts テーブル
+## cat_posts table
 
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
@@ -63,7 +51,7 @@ belongs_to :user
 has_many    :cat_post_comments
 
 
-## cat_post_comments テーブル
+## cat_post_comments table
 | Column           | Type       | Options                            |
 | ---------------- | ---------- | ---------------------------------- |
 | user_id          | references | null: false, foreign_key: true     |
@@ -73,31 +61,7 @@ has_many    :cat_post_comments
 belongs_to :user
 belongs_to :cat_post
 
-## dog_posts テーブル
-
-| Column               | Type       | Options                        |
-| -------------------- | ---------- | ------------------------------ |
-| user_id              | references | null: false, foreign_key: true |
-| dog_post_title       | string     | null: false                    |
-| dog_post_text        | text       | null: false                    |
-
-
-### Association
-belongs_to :user
-has_many   :dog_post_comments
-
-
-## dog_post_comments テーブル
-| Column           | Type       | Options                            |
-| ---------------- | ---------- | ---------------------------------- |
-| user_id          | references | null: false, foreign_key: true     |
-| dog_post_id      | references | null: false, foreign_key: true     |
-| dog_post_comment | text       | default: "", null: false           |
-
-belongs_to :user
-belongs_to :dog_post
-
-## items テーブル
+## items table
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -110,7 +74,7 @@ belongs_to :dog_post
 belongs_to :user
 has_many   :items_comments
 
-## items_comments テーブル
+## items_comments table
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -122,7 +86,7 @@ has_many   :items_comments
 belongs_to :user
 belongs_to :items
 
-## vets テーブル
+## vets table
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -134,7 +98,7 @@ belongs_to :items
 belongs_to :user
 has_many   :vet_comments
 
-## vets_comments テーブル
+## vets_comments table
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -148,7 +112,7 @@ belongs_to :vet
 
 
 
-## chats テーブル
+## chats table
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -160,7 +124,7 @@ belongs_to :vet
 belongs_to :user
 has_many :chat_comments
 
-## chat_comment テーブル
+## chat_comment table
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
@@ -172,3 +136,5 @@ has_many :chat_comments
 belongs_to :user
 belongs_to :chat
 
+## Author
+Ayumi Uchimura
