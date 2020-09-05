@@ -15,7 +15,6 @@ class User < ApplicationRecord
          has_many :messages, dependent: :destroy
 
 
-
          with_options presence: true do
           validates :nickname
           validates :password, format: { with: /\A[a-z]+[0-9]+\z/i}

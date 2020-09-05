@@ -9,19 +9,20 @@
     <%= image_tag "cutie_pies.png", class:"logo" %>CUTIE<span class="hart">❤︎</span>PIES
     <% end %>
     </h1>
-      <%= image_tag "black_cat.png", class:"black_cat" %>
+      <%= image_tag "black_cat.png", {:class => "black_cat"} %>
     </div>
     
     <div class="header_lists">
-        <ul>
+        <ul class="header_lists_wrapper">
           <% if user_signed_in? %> 
             <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
             <li class="header_list">
-            <%= link_to edit_user_registration_path do %>
-              <%= current_user.nickname %>
-            <% end %>
+              <ul class="header_list"><%= current_user.nickname %>
+                  <li class="account_list"><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
+                  <li class="account_list"><%= link_to "アカウントの編集", edit_user_registration_path %></li>
+                  <li class="account_list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
             </li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header_list" %></li>
           <% else %>
             <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
             <li><%= link_to "ログイン", new_user_session_path, class: "header_list" %></li>
@@ -37,4 +38,6 @@
 </body>
 
 </html>
+
+
 

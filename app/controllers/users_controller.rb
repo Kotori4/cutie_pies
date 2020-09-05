@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @nickname = current_user.nickname
+    @cat_posts = @user.cat_posts.includes(:user).order("created_at DESC")
+    @items = @user.items.includes(:user).order("created_at DESC")
   end
 end

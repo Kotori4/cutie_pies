@@ -7,20 +7,66 @@
 }
 
 .my_page_wrapper {
-  text-align: center;
+  margin: 0 5%;
 }
 
+.my_page_pic {
+  display: inline-block;
+  margin: 10px 40px;
+}
+
+.nickname_wrap {
+  text-align: center;
+}
 .nickname {
   display: inline-block;
   margin: 50px 10px 40px 10px;
   border-bottom: 2px solid rgb(62,62,62);
 }
 
-.posted_shares {
+.my_page_pic_wrapper {
+width: 90vw;
+flex-wrap: wrap;
+display: flex;
+justify-content: space-evenly;
+margin: 40px 40px 40px 0;
+}
+
+.my_page_card__body {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+}
+
+.my_page_card__text {
+width: 85%;
+}
+
+.my_page_time {
+  margin-bottom: 40px;
+}
+
+.my_page_shares {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .posted_recomm {
+  margin: 15px 0 20px 0;
+}
 
+.my_page_recommend_title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.my_page_share_title {
+  border-bottom: 1px solid rgb(62, 62, 62);
+  margin-bottom: 20px;
+}
+
+.none_recommended {
+  margin: 20px 0 50px 0;
 }
