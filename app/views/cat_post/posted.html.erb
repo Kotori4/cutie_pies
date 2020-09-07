@@ -19,6 +19,8 @@
             <% end %>
         </div>
     </div>
+<%= paginate @cat_posts %>
+
         <div class="posting_pic_wrapper">
           <%= link_to "写真を投稿する", new_cat_post_path, class:"posting_pic" %>
         </div>

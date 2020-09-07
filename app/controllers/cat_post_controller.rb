@@ -31,7 +31,7 @@ class CatPostController < ApplicationController
 private
 
 def all_posted
-  @cat_posts = CatPost.all.includes(:user).order("created_at DESC")
+  @cat_posts = CatPost.all.includes(:user).order("created_at DESC").page(params[:page]).per(24)
 end
 
   def cat_post_params
