@@ -2,17 +2,23 @@
 
 
 ## Overview
-* CUTIE PIES to share your pets pictures and recommendation of items, foods, vets etc..
-Also can ask your problems to live healthy and happy together.
+* CUTIE PIES to share your pets pictures and recommendation of items, foods, vets etc..and also can ask your pets' problems to live healthy and be happy together. 
 
 ## Description
-* Need to make your own account to use CUTIE PIES, just put your nickname( the other user can see your nickname), email address, password and your pet info as well.
+* Need to make your own account to use CUTIE PIES, just put your nickname( the other user can see your nickname), email address, password and your pet info as well if you have a pet.
 Then, share your pictures or just look around other cats or dog or talk to someone about your problems or life style whatever you feel like.
-Just click your nickname on the header when you want to change your account information, also can delete your account on the page but you could not undo after delete it, please make your account again if you want it again.
+Just click your nickname on the header when you want to change your account information, also can delete your account on the page but you can not undo after delete it, please make your account again if you want it again.
+* You can add your comments when you want to talk to the poster and the newest comment is on the top of the list.
+* Share your recommendation of items for your pets and add Amazon URL if they have it to check the item easily but it's not necessary.
+* You can check your pictures and recommendation that you posted from your account page which called "My Page". Transition to My Page from your nickname on the header or posted you did before and also you can check the other user's My Page.
 
 ### Ruby version
 ruby 2.6.5
 Rails 6.0.3.2
+
+### Deployed URL
+* https://cutie-pies.herokuapp.com/
+* test user account : kotori@gmail.com / pass: kotori123
 
 ## users table
 
@@ -109,8 +115,6 @@ has_many   :vet_comments
 ### Association
 belongs_to :user
 belongs_to :vet
-
-
 
 ## chats table
 
