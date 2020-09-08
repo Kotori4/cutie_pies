@@ -140,5 +140,10 @@ has_many :chat_comments
 belongs_to :user
 belongs_to :chat
 
+
+## Background of this web application 
+* Having a pet in Japan is really hard because lots of places aren't allowed pet and lots of people have never had a pet so, don’t know how to have them at the first time and there is no place to talk or ask about it. But you and your cuties could be happier if you know great items or foods or vet, etc... 
+And I’ve been thinking that would be great if I make the place for people who love animals and want to share the opinions and recommendation to make the other people’s happy.
+
 ## Author
 Ayumi Uchimura
