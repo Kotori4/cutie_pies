@@ -21,15 +21,21 @@ Just click your nickname on the header when you want to change your account info
 * Share your recommendation of items for your pets and add Amazon URL if they have it to check the item easily but it's not necessary.
 * You can check your pictures and recommendation that you posted from your account page which called "My Page". Transition to My Page from your nickname on the header or posted you did before and also you can check the other user's My Page.
 
-### Ruby version
-ruby 2.6.5
-Rails 6.0.3.2
+### - Development environment -
+* ruby 2.6.5
+* Rails 6.0.3.2
+* AWS S3
+* MySQL
+* JavaScript
+* jQuery
+* HTML
+* CSS
 
-### Deployed URL
+### - Deployed URL -
 * https://cutie-pies.herokuapp.com/
 * test account : ID / koneko , password / koneko123
 
-### ER図
+### - ER図 -
 <img src="./public/image/Cutie_Pies_app_ER.png">
 
 ## users table
@@ -154,7 +160,7 @@ belongs_to :chat
 
 
 ## Background of this web application 
-* 日本ではまだペットを飼える場所か少なく、ペットと暮らす事そのものが難しいというのが現状です。その為、動物病院やフードのオススメなどの情報も埋もれやすく、誰かに直接相談ができません。そんな中、大切な家族であるペットとより良い暮らしをするにはどうしたらいいのかと考えた時に、このWebサイトを構築を考えました。
+* 日本ではまだペットを飼える場所か少なく、ペットと暮らす事そのものが難しいというのが現状です。その為、動物病院やフードのオススメなどの情報も埋もれやすく、誰かに直接相談ができません。そんな中、大切な家族であるペットとより良い暮らしをするにはどうしたらいいのかと考えた時に、このWebサイトの構築を考えました。
 大切な家族とより幸せに過ごすために、情報は欠かせません。人間にもたくさんの性格や体質があるように猫や犬も十人十色、千差万別です。自身が経験した事や知っている情報を共有、発信することで動物たちと幸せに暮らせる家族が増えればと考えています。
 
 * Having a pet in Japan is really hard because lots of places aren't allowed pet and people have never had a pet so, don’t know how to have them and care of them at the first time and there is no place to talk or ask about it. But I'm convinced you and your cuties could be happier if you know great items or foods or vet, etc... because no one same personality and constitution to the other people, the same is true of animals too.
