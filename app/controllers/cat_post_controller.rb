@@ -3,7 +3,6 @@ class CatPostController < ApplicationController
   before_action :all_posted, only: [:index, :posted]
 
   def index
-   
   end
 
   def new
