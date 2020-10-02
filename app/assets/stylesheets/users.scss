@@ -10,6 +10,21 @@
   margin: 0 5%;
 }
 
+.account_profile {
+  display: flex;
+  justify-content: center;
+}
+
+.profile_title {
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.detail_profile li {
+  margin: 8px;
+}
+
 .my_page_pic {
   display: inline-block;
   margin: 10px 40px;
@@ -59,7 +74,7 @@ width: 85%;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin: 20px auto;
 }
 
 .my_page_share_title {

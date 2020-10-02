@@ -5,6 +5,16 @@
     <div class="nickname_wrap"> 
       <h1 class="nickname"><%= @user.nickname %>'s page</h1>
     </div>
+    <div class="account_profile">
+      <ul class="detail_profile">
+     <div class="profile_title">Profile</div>
+        <li>何派？: <%= @user.favorite.name %></li>
+        <li>ペットの有無: <%= @user.have_pet.name %></li>
+        <% if @user.pet_name.present? %>
+          <li>Pet name: <%= @user.pet_name %></li>
+        <% end %>
+      </ul>
+    </div>
       <div class="my_page_recommend_title">投稿した写真</div>
        <div class="my_page_pic_wrapper">
        <% if @cat_posts.present? %>
