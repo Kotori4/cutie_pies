@@ -1,0 +1,2 @@
+class DogPostComment < ApplicationRecord
+end
