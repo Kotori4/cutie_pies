@@ -1,5 +1,37 @@
 <%= render "shared/dog_header" %>
+<body>
+  <main class="cat_main">
+    <div class="inner">
+      <h1 class="page-title">SHARE YOUR CUTIE'S PICTURES</h1>
+      <h3>可愛い写真をシェアしよう！</h3>
+        <div class="pic">
 
+      <%= link_to new_cat_post_path do %>
+        <span class="post_btn">投稿する<%= image_tag "next_page.png", class: "next_page" %></span>
+      <% end %>
+      
+      </div>
+    </div>
+
+      <h1 class="page-title">SHARE AND HAVE A CHAT!</h1>
+        <h3>おすすめをシェアしよう！</h3>
+        <div class ="recommendations_main">
+          <ul>
+            <%= link_to rooms_path do %>
+              <li class="recommended_list"><%= image_tag "talking_dog.jpg" %><p class="recommendation_title">CHAT ROOM</p></li>
+            <% end %>
+            <%= link_to items_path do %>
+             <li class="recommended_list"><%= image_tag "playing_dog.jpg" %><p class="recommendation_title">FOODS/GOODS</p></li>
+            <% end %>
+           <%= link_to vets_path do %>
+            <li class="recommended_list"><%= image_tag "dog_vet.jpg" %><p class="recommendation_title">SICK/VET</p></li>
+          <% end %>
+          </ul>
+        </div>
+        
+    <%= render "shared/link_to_top" %>
+  </main>
+</body>
 
 <%= render "shared/footer" %>
 
