@@ -1,0 +1,56 @@
+<%= render "shared/dog_header" %>
+<body>
+  <main class="cat_main">
+    <div class="inner">
+      <h1 class="page-title">SHARE YOUR CUTIE'S PICTURES</h1>
+      <h3>可愛い写真をシェアしよう！</h3>
+        <div class="pic">
+            <% @dog_posts.first(4).each do |dog| %>
+              <div class="card__body">
+                <%= link_to dog_post_path(dog), method: :get do %>
+                  <%= image_tag dog.dog_image, class:"posted_pic" %>
+                  <div class="card__text">
+                    <div class="card__user">
+                    <%= link_to "/users/#{dog.user.id}" do%> 
+                    <%= dog.user.nickname %>
+                    <% end %>
+                    </div>
+                    <div class="card__title"><%= dog.dog_post_title %></div> 
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+        </div>
+      <div class="btn_wrapper">  
+      <%= link_to posted_dog_post_index_path do %>
+        <span class="see_more">もっと見る<%= image_tag "next_page.png", class: "next_page" %></span>
+      <% end %>
+      <%= link_to new_dog_post_path do %>
+        <span class="post_btn">投稿する<%= image_tag "next_page.png", class: "next_page" %></span>
+      <% end %>
+      
+      </div>
+    </div>
+
+      <h1 class="page-title">SHARE AND HAVE A CHAT!</h1>
+        <h3>おすすめをシェアしよう！</h3>
+        <div class ="recommendations_main">
+          <ul>
+            <%= link_to rooms_path do %>
+              <li class="recommended_list"><%= image_tag "talking_dog.jpg" %><p class="recommendation_title">CHAT ROOM</p></li>
+            <% end %>
+            <%= link_to items_path do %>
+             <li class="recommended_list"><%= image_tag "playing_dog.jpg" %><p class="recommendation_title">FOODS/GOODS</p></li>
+            <% end %>
+           <%= link_to vets_path do %>
+            <li class="recommended_list"><%= image_tag "dog_vet.jpg" %><p class="recommendation_title">SICK/VET</p></li>
+          <% end %>
+          </ul>
+        </div>
+        
+    <%= render "shared/link_to_top" %>
+  </main>
+</body>
+
+<%= render "shared/footer" %>
+

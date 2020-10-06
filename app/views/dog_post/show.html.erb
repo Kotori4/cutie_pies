@@ -1,0 +1,46 @@
+<%= render "shared/dog_header" %>
+
+<div class="posted_comment_wrapper">
+  <div class="posted_picture_wrapper">
+    <%= image_tag @dog_post.dog_image, class:"posted_picture" %> 
+  </div>
+  <div class="posted_info">  
+    <div class="user_posted">
+      Nickname:<div class="posted__user"><%= link_to "/users/#{@dog_post.user.id}" do%> 
+      <%= @dog_post.user.nickname %>
+      <% end %>
+      </div>
+      Title:<div class="posted__title"><%= @dog_post.dog_post_title %></div> 
+      Message:<div class="posted__text"><%= @dog_post.dog_post_text %></div> 
+      Posted at:<div class="posted__time"><%= @dog_post.created_at.to_s(:datetime_jp) %></div> 
+    </div>
+
+    <div class="posted_comments">
+      <div class="posted_comment_title">Comments</div>
+      <div class="comment_wrapper">
+    <% if @dog_post_comments.present? %>
+      <% @dog_post_comments.each do |comment| %>
+        <ul comment_info>
+          <li class="comment_user"><%= comment.user.nickname %></li>
+          <li class="posted_comment"><%= comment.dog_post_comment %></li>
+        </ul>
+    <% end %>
+      <% else %>
+        <div class="no_post_comment">コメントはありません</div>
+    <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="container">
+      <%= form_with(model: [@dog_post_comment,@dog_post], url:dog_post_dog_post_comments_path(@dog_post), method: :post, local: true) do |f| %>
+        <%= f.text_area :dog_post_comment, placeholder: "コメントを入力", class:"comment_field" %>
+      <div><%= f.submit "コメントする", class:"comment_btn" %></div>
+      <% end %>
+  </div>
+
+  <div class="top_page_link">
+    <%= link_to "前のページに戻る", :back %>
+  </div>
+<%= render "shared/footer" %>

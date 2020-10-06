@@ -1,0 +1,3 @@
+class DogPostCommentsController < ApplicationController
+
+end

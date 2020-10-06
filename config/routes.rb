@@ -26,5 +26,12 @@ end
       get 'posted'
     end
   end
+
+  resources :dog_post do
+    resources :dog_post_comments, only: :create
+    collection do 
+      get 'posted'
+    end
+  end
 end
 
