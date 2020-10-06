@@ -5,8 +5,25 @@
       <h1 class="page-title">SHARE YOUR CUTIE'S PICTURES</h1>
       <h3>可愛い写真をシェアしよう！</h3>
         <div class="pic">
+            <% @dog_posts.first(4).each do |dog| %>
+              <div class="card__body">
+                <%= link_to dog_post_path(dog), method: :get do %>
+                  <%= image_tag dog.dog_image, class:"posted_pic" %>
+                  <div class="card__text">
+                    <div class="card__user">
+                    <%= link_to "/users/#{dog.user.id}" do%> 
+                    <%= dog.user.nickname %>
+                    <% end %>
+                    </div>
+                    <div class="card__title"><%= dog.dog_post_title %></div> 
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+        </div>
+      <div class="btn_wrapper">  
 
-      <%= link_to new_cat_post_path do %>
+      <%= link_to new_dog_post_path do %>
         <span class="post_btn">投稿する<%= image_tag "next_page.png", class: "next_page" %></span>
       <% end %>
       
