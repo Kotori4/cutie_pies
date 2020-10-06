@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_26_090056) do
+ActiveRecord::Schema.define(version: 2020_10_06_032053) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,15 @@ ActiveRecord::Schema.define(version: 2020_08_26_090056) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_cat_posts_on_user_id"
+  end
+
+  create_table "dog_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "dog_post_title", null: false
+    t.text "dog_post_text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_dog_posts_on_user_id"
   end
 
   create_table "item_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -136,6 +145,7 @@ ActiveRecord::Schema.define(version: 2020_08_26_090056) do
   add_foreign_key "cat_post_comments", "cat_posts"
   add_foreign_key "cat_post_comments", "users"
   add_foreign_key "cat_posts", "users"
+  add_foreign_key "dog_posts", "users"
   add_foreign_key "item_comments", "items"
   add_foreign_key "item_comments", "users"
   add_foreign_key "items", "users"
