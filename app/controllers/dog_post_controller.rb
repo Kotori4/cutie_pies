@@ -12,7 +12,7 @@ class DogPostController < ApplicationController
   def create
     @dog_post = DogPost.new(dog_post_params)
     if @dog_post.save
-      redirect_to dog_post_index_path   
+      redirect_to dog_post_index_path
     else
       render 'new'
     end
@@ -20,6 +20,8 @@ class DogPostController < ApplicationController
 
   def show
     @dog_post = DogPost.find(params[:id])
+    @dog_post_comment = DogPostComment.new
+    @dog_post_comments = @dog_post.dog_post_comments.includes(:user).order("created_at DESC")
   end
 
   def posted
