@@ -22,7 +22,9 @@
             <% end %>
         </div>
       <div class="btn_wrapper">  
-
+      <%= link_to posted_dog_post_index_path do %>
+        <span class="see_more">もっと見る<%= image_tag "next_page.png", class: "next_page" %></span>
+      <% end %>
       <%= link_to new_dog_post_path do %>
         <span class="post_btn">投稿する<%= image_tag "next_page.png", class: "next_page" %></span>
       <% end %>

@@ -1,7 +1,7 @@
 class DogPostController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
   before_action :all_posted, only: [:index, :posted]
-  
+
   def index
   end
 
@@ -16,6 +16,9 @@ class DogPostController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def posted
   end
 
   private

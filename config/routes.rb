@@ -4,7 +4,6 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   resources :users, only: :show
-  resources :dog_post
 
   mount ActionCable.server => '/cable'
   root "main#index"
@@ -23,6 +22,12 @@ end
   
   resources :cat_post do
     resources :cat_post_comments, only: :create
+    collection do 
+      get 'posted'
+    end
+  end
+  
+  resources :dog_post do
     collection do 
       get 'posted'
     end
