@@ -1,0 +1,16 @@
+<%= render "shared/dog_header" %>
+
+<div class="posted_comment_wrapper">
+  <div class="posted_picture_wrapper">
+    <%= image_tag @dog_post.dog_image, class:"posted_picture" %> 
+  </div>
+  <div class="posted_info">  
+    <div class="user_posted">
+      Nickname:<div class="posted__user"><%= link_to "/users/#{@dog_post.user.id}" do%> 
+      <%= @dog_post.user.nickname %>
+      <% end %>
+      </div>
+      Title:<div class="posted__title"><%= @dog_post.dog_post_title %></div> 
+      Message:<div class="posted__text"><%= @dog_post.dog_post_text %></div> 
+      Posted at:<div class="posted__time"><%= @dog_post.created_at.to_s(:datetime_jp) %></div> 
+    </div>

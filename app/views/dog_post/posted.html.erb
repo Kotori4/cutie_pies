@@ -1,0 +1,35 @@
+<%= render "shared/dog_header" %>
+
+<body>
+  <main class="posted_cat_main">
+    <div class="posted_inner">
+      <h1 class="posted_page-title">SHARE YOUR CUTIE'S PICTURES</h1>
+      <h3>可愛い写真をシェアしよう！</h3>
+        <div class="posted_pic_wrapper">
+            <% @dog_posts.each do |dog| %>
+              <%= link_to dog_post_path(dog), method: :get do %>
+                <div class="posted_card__body">
+                  <%= image_tag dog.dog_image, class:"posted_pic" %>
+                  <div class="posted_card__text">
+                    <div class="posted_card__user"><%= dog.user.nickname %></div>
+                    <div class="card__title"><%= dog.dog_post_title %></div> 
+                  </div>  
+                </div>
+              <% end %>
+            <% end %>
+        </div>
+    </div>
+<%= paginate @dog_posts %>
+
+        <div class="posting_pic_wrapper">
+          <%= link_to "写真を投稿する", new_dog_post_path, class:"posting_pic" %>
+        </div>
+
+    <div class="top_page_link">
+      <%= link_to "前のページに戻る", :back %>
+    </div>
+
+  </main>
+</body>
+
+<%= render "shared/footer" %>

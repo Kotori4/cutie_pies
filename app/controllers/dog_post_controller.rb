@@ -18,6 +18,10 @@ class DogPostController < ApplicationController
     end
   end
 
+  def show
+    @dog_post = DogPost.find(params[:id])
+  end
+
   def posted
   end
 
