@@ -72,7 +72,7 @@ has_many :chat_comments
 
 ### Association
 belongs_to :user
-has_many    :cat_post_comments
+has_many   :cat_post_comments
 
 
 ## cat_post_comments table
@@ -84,6 +84,30 @@ has_many    :cat_post_comments
 
 belongs_to :user
 belongs_to :cat_post
+
+## dog_posts table
+
+| Column               | Type       | Options                        |
+| -------------------- | ---------- | ------------------------------ |
+| user_id              | references | null: false, foreign_key: true |
+| dog_post_title       | string     | null: false                    |
+| dog_post_text        | text       | null: false                    |
+
+
+### Association
+belongs_to :user
+has_many   :dog_post_comments
+
+
+## cat_post_comments table
+| Column           | Type       | Options                            |
+| ---------------- | ---------- | ---------------------------------- |
+| user_id          | references | null: false, foreign_key: true     |
+| dog_post_id      | references | null: false, foreign_key: true     |
+| dog_post_comment | text       | default: "", null: false           |
+
+belongs_to :user
+belongs_to :dog_post
 
 ## items table
 
