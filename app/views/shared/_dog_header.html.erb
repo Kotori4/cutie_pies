@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<div class="header_border">
+  <header class="site_header">
+    <div class="main_header">
+    <h1 class="title">
+    <%= link_to root_path do %>
+    <%= image_tag "cutie_pies.png", class:"logo" %>CUTIE<span class="hart">❤︎</span>PIES
+    <% end %>
+    </h1>
+      <%= image_tag "akita_dog.png", {:class => "black_cat"} %>
+    </div>
+    
+    <div class="header_lists">
+        <ul class="header_lists_wrapper">
+          <% if user_signed_in? %> 
+            <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
+            <li class="header_list">
+              <ul class="header_list"><%= current_user.nickname %>
+                  <li class="account_list"><%= link_to "マイページ", "/users/#{current_user.id}" %></li>
+                  <li class="account_list"><%= link_to "アカウントの編集", edit_user_registration_path %></li>
+                  <li class="account_list"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li class="header_list"><a href="#descriptionlink">Cutie Piesとは</a></li>
+            <li><%= link_to "ログイン", new_user_session_path, class: "header_list" %></li>
+            <li><%= link_to "新規登録", new_user_registration_path, class: "header_list" %></li>
+          <% end %>
+        </ul>
+    </div>
+  </div>
+</header>
+
+<body>
+  <%= yield %>
+</body>
+
+</html>
