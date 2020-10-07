@@ -15,7 +15,7 @@
         <% end %>
       </ul>
     </div>
-      <div class="my_page_recommend_title">投稿した写真</div>
+      <div class="my_page_recommend_title">投稿したにゃんこ写真</div>
        <div class="my_page_pic_wrapper">
        <% if @cat_posts.present? %>
         <% @cat_posts.each do |c| %>
@@ -29,9 +29,28 @@
           <% end %>
         <% end %>
       <% else %>
-        <div>投稿した写真はありません。</div>
+        <div>投稿したにゃんこちゃんの写真はありません。</div>
       <% end %>
       </div>
+
+      <div class="my_page_recommend_title">投稿したわんこ写真</div>
+       <div class="my_page_pic_wrapper">
+       <% if @dog_posts.present? %>
+        <% @dog_posts.each do |d| %>
+          <%= link_to dog_post_path(d), method: :get do %>
+            <div class="my_page_card__body">
+              <%= image_tag d.dog_image, class:"posted_pic" %> 
+              <div class="my_page_card__text">
+              Posted at: <div class="my_page_time"><%= d.created_at.to_s(:datetime_jp) %></div>
+              </div>  
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+        <div>投稿したわんこちゃんの写真はありません。</div>
+      <% end %>
+      </div>
+
       <div class="my_page_shares">
         <ul class="posted_recomm">
           <p class="my_page_recommend_title">投稿したオススメ</p>
